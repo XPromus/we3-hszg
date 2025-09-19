@@ -1,0 +1,13 @@
+#set heading(numbering: "1.")
+
+#import "@preview/codly:1.3.0": *
+#import "@preview/codly-languages:0.1.1": *
+
+#import "@preview/frame-it:1.2.0": *
+#let (notice, definition) = frames(
+  notice: ("Wichtig", red),
+  definition: ("Definition"),
+)
+
+#show link: underline
+#show link: set text(fill: blue)

@@ -1,24 +1,15 @@
-#import "@preview/codly:1.3.0": *
-#import "@preview/codly-languages:0.1.1": *
+#import "definitions.typ": *
 #show: codly-init.with()
 #codly(languages: codly-languages)
-
-#import "@preview/frame-it:1.2.0": *
-#let (example, feature, variant, syntax) = frames(
-  feature: ("Feature",),
-  // For each frame kind, you have to provide its supplement title to be displayed
-  variant: ("Variant",),
-  // You can provide a color or leave it out and it will be generated
-  example: ("Example", gray),
-  // You can add as many as you want
-  syntax: ("Syntax",),
-)
 #show: frame-style(styles.boxy)
 
-#show link: underline
-#show link: set text(fill: blue)
-
 = Web Engineering 3 - Script
+
+#outline(
+  title: [Inhaltsverzeichnis]
+)
+#pagebreak()
+
 = Ablauf & Planung
 - Ziel des Moduls: Projektarbeit mit einem Beleg und einer Präsentation als finales Ziel
 - Projekt sollte einen Großteil der Aspekte der Web Entwicklung abdecken
@@ -85,6 +76,9 @@ SO THAT {value of justification} \
 NO LATER THAN {best by date}
 
 == User Stories für das finale Projekt
+
+= Backend
+#include "content/springboot.typ"
 
 = Debugging
 - Lesen von Dokumentation und Stack Traces
