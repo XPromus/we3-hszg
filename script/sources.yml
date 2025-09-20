@@ -1,0 +1,35 @@
+# Hayagriva Format
+# https://github.com/typst/hayagriva/blob/main/docs/file-format.md
+
+anatomyOfAUserStory:
+  type: Web
+  title: The Anatomy of a User Story
+  author: Jim Schiel
+  publisher: ScrumAlliance
+  url: https://resources.scrumalliance.org/Article/anatomy-user-story
+
+baeldungBean:
+  type: Web
+  title: What Is a Spring Bean
+  author: Nguyen Nam Thai
+  publisher: baeldung
+  url: https://www.baeldung.com/spring-bean
+
+geeksForGeeksSpringDependencyInjection:
+  type: Web
+  title: Spring Boot - Dependency Injection and Spring Beans
+  author: geekforgs9hp
+  publisher: GeeksforGeeks
+  url: https://www.geeksforgeeks.org/advance-java/spring-boot-dependency-injection-and-spring-beans/
+
+springBeanScopes:
+  type: Web
+  title: Bean Scopes
+  publisher: Broadcom
+  url: https://docs.spring.io/spring-framework/reference/core/beans/factory-scopes.html#beans-factory-scopes-singleton
+
+springWebSocketScope:
+  type: Web
+  title: WebSocket Scope
+  publisher: Broadcom
+  url: https://docs.spring.io/spring-framework/reference/web/websocket/stomp/scope.html

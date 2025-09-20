@@ -153,4 +153,4 @@ const config = {
 === IDE Debugging
 === Debugging Extensions
 
-#bibliography("sources.bib")
+#bibliography("sources.yml")

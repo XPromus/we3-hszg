@@ -4,9 +4,10 @@
 #import "@preview/codly-languages:0.1.1": *
 
 #import "@preview/frame-it:1.2.0": *
-#let (notice, definition) = frames(
+#let (notice, definition, guideline) = frames(
   notice: ("Wichtig", red),
   definition: ("Definition"),
+  guideline: ("Richtlinie"),
 )
 
 #show link: underline
