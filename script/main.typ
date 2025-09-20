@@ -112,4 +112,4 @@ const config = {
 === Debugging Extensions
 
 #pagebreak()
-#bibliography("sources.yml")
+#bibliography("sources.yml", title: "Quellenverzeichnis")
