@@ -1,7 +1,4 @@
 #import "../../definitions.typ": *
-#show: frame-style(styles.boxy)
-#show: codly-init.with()
-#codly(languages: codly-languages)
 
 === OpenAPI UI
 ```kotlin

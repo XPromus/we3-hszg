@@ -3,79 +3,32 @@
 #codly(languages: codly-languages)
 #show: frame-style(styles.boxy)
 
-= Web Engineering 3 - Script
+#set heading(numbering: "1.")
+
+#include "titlepage.typ"
+#pagebreak()
 
 #outline(
   title: [Inhaltsverzeichnis]
 )
 #pagebreak()
 
-= Ablauf & Planung
-- Ziel des Moduls: Projektarbeit mit einem Beleg und einer Präsentation als finales Ziel
-- Projekt sollte einen Großteil der Aspekte der Web Entwicklung abdecken
-- Basis für das Projekt: User-Stories, die das Projekt leiten sollen
-- Gruppenarbeit möglich
-- Beleg mit Code als Abgabe am Ende des Semesters
-= Anforderungen
-== Projekt
-- Datenbank, Backend, Frontend mit Container Deployment (Docker, Podman, ...)
-- Dokumentation der REST API Endpunkte mit OpenAPI o.ä.
-- Einige Tests in Front- und Backend. Komplettes Test coverage wird nicht vorausgesetzt
-- Einreichung des Repositories (ZIP, Link zu GitHub oder andere VCS)
-== Beleg
-- Seitenanzahl nicht festgelegt. Bewegt sich wahrscheinlich um 20 Seiten, wird aber nicht vorausgesetzt
-- Beschreibung, wie Anforderungen aus den User Stories umgesetzt wurden
-- Umsetzung beschreiben
-- Gründe für Entscheidungen bei der Entwicklung darstellen
-- Dokumentation der einzelnen Software Bestandteile 
-== Präsentation bzw. Verteidigung
-- Demonstration des finalen Produkts
-- Vorstellung der Umsetzung
-- Kurzes Zeigen von ausgewählten Programmbestandteilen, die als wichtig angesehen werden
-= Technologien
-== Frontend
-- Svelte/SvelteKit
-- Vue
-- React
-- Angular
-- Astro
-- Vanilla
-- Rails
-- Laravell
-- Symphony
-- Vite/Webpack
-- NodeJS/Bun/Deno/Yarn
-- TailwindCSS
-- PRIME
-== Backend
-- Tomcat Servelet zu Spring Beans (Aufbau)
-- Spring
-- Micronaut
-- Quarkus
-- Kotlin
-- Gradle
-== Database
-- PostgreSQL
-== Testing
-- Cypress, Playwright
-== DevOps
-- Docker
-- Podman
-= User Stories
-Kernpunkte einer User Story @anatomyOfAUserStory:
-- Wer ist der User
-- Was will der User machen
-- Warum will der User das machen
-- Weitere Informationen sind optional
+#set page(footer: context [
+  Hochschule Zittau/Görlitz
+  #h(1fr)
+  #counter(page).display(
+    "1",
+  )
+])
 
-*Template* @anatomyOfAUserStory:\
-AS A {user|persona|system} \
-INSTEAD OF {current condition} \
-I WANT TO {action} IN {mode} TIME | IN {differentiating performance units} TO {utility performance units} \
-SO THAT {value of justification} \
-NO LATER THAN {best by date}
+#include "content/planning.typ"
+#pagebreak()
 
-== User Stories für das finale Projekt
+#include "content/technologies.typ"
+#pagebreak()
+
+#include "content/user_stories.typ"
+#pagebreak()
 
 = Backend
 #include "content/springboot.typ"
@@ -153,4 +106,5 @@ const config = {
 === IDE Debugging
 === Debugging Extensions
 
+#pagebreak()
 #bibliography("sources.yml")

@@ -1,0 +1,29 @@
+= Technologien
+== Frontend
+- Svelte/SvelteKit
+- Vue
+- React
+- Angular
+- Astro
+- Vanilla
+- Rails
+- Laravell
+- Symphony
+- Vite/Webpack
+- NodeJS/Bun/Deno/Yarn
+- TailwindCSS
+- PRIME
+== Backend
+- Tomcat Servelet zu Spring Beans (Aufbau)
+- Spring
+- Micronaut
+- Quarkus
+- Kotlin
+- Gradle
+== Database
+- PostgreSQL
+== Testing
+- Cypress, Playwright
+== DevOps
+- Docker
+- Podman

@@ -22,6 +22,24 @@ geeksForGeeksSpringDependencyInjection:
   publisher: GeeksforGeeks
   url: https://www.geeksforgeeks.org/advance-java/spring-boot-dependency-injection-and-spring-beans/
 
+springContainerOverview:
+  type: Web
+  title: Container Overview
+  publisher: Broadcom
+  url: https://docs.spring.io/spring-framework/reference/core/beans/basics.html
+
+springDependencyInjection:
+  type: Web
+  title: Depency Injection
+  publisher: Broadcom
+  url: https://docs.spring.io/spring-framework/reference/core/beans/dependencies/factory-collaborators.html
+
+springMethodInjection:
+  type: Web
+  title: Method Injection
+  publisher: Broadcom
+  url: https://docs.spring.io/spring-framework/reference/core/beans/dependencies/factory-method-injection.html
+
 springBeanScopes:
   type: Web
   title: Bean Scopes
