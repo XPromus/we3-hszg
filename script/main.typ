@@ -1,11 +1,11 @@
-#import "definitions.typ": *
+#import "template/definitions.typ": *
 #show: codly-init.with()
 #codly(languages: codly-languages)
 #show: frame-style(styles.boxy)
 
 #set heading(numbering: "1.")
 
-#include "titlepage.typ"
+#include "template/titlepage.typ"
 #pagebreak()
 
 #outline(
@@ -30,8 +30,13 @@
 #include "content/user_stories.typ"
 #pagebreak()
 
-= Backend
-#include "content/springboot.typ"
+// BACKEND
+#include "content/backend/backend.typ"
+#pagebreak()
+
+// FRONTEND
+#include "content/frontend/frontend.typ"
+#pagebreak()
 
 = Debugging
 - Lesen von Dokumentation und Stack Traces

@@ -1,4 +1,4 @@
-#import "../../definitions.typ": *
+#import "../../../template/definitions.typ": *
 
 === Komponenten einer Spring Anwendung
 ==== Controller

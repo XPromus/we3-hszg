@@ -1,4 +1,4 @@
-#import "../definitions.typ": *
+#import "../../template/definitions.typ": *
 
 == Spring
 
@@ -24,3 +24,6 @@
 #pagebreak()
 
 #include "springboot/components.typ"
+#pagebreak()
+
+#include "springboot/authentication.typ"

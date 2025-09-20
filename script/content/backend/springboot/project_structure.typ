@@ -1,4 +1,4 @@
-#import "../../definitions.typ": *
+#import "../../../template/definitions.typ": *
 
 === Struktur für ein Projekt
 #table(

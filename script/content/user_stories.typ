@@ -1,4 +1,4 @@
-#import "../definitions.typ": *
+#import "../template/definitions.typ": *
 
 = User Stories
 Kernpunkte einer User Story @anatomyOfAUserStory:

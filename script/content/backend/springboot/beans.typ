@@ -1,4 +1,4 @@
-#import "../../definitions.typ": *
+#import "../../../template/definitions.typ": *
 
 === Beans
 #definition[Beans][
@@ -91,7 +91,7 @@ assertEquals(1000, company.getAddress().getNumber());
 Eine einzelne Instanz einer Bean, die in der gesamten Anwendung geteilt wird @geeksForGeeksSpringDependencyInjection. Diese Instanz wird in einem Cache aus Singleton Beans gespeichert. Jede zukünftige Anfrage und Referenz auf diese Bean gibt dieses Objekt aus dem Cache zurück. Der Singleton Scope ist der standard Scope für eine Bean. Keine spezielle Annotation ist notwendig @springBeanScopes. \
 
 #figure(
-  image("../../images/singleton_bean_diagram.png"),
+  image("../../../images/singleton_bean_diagram.png"),
   caption: "Funktionalität des Singleton Scopes"
 )
 
@@ -112,7 +112,7 @@ Eine neue Instanz der Bean wird bei jeder Anfrage erstellet @geeksForGeeksSpring
 Spring verwaltet, anders als bei anderen Beans, nicht den kompletten Lebenszyklus einer Prototype Bean. Das Löschen einer Prototype Bean muss manuel durch den Client geschehen. Ein eigens definierter Bean Post-Processor kann genutzt werden, damit der Container Ressourcen, die von Prototype Beans gehalten werden, freigibt @springBeanScopes.
 
 #figure(
-  image("../../images/prototype_bean_diagram.png"),
+  image("../../../images/prototype_bean_diagram.png"),
   caption: "Funktionalität des Prototype Scopes"
 )
 
