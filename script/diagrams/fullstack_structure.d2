@@ -1,0 +1,88 @@
+grid-rows: 3
+
+classes: {
+    mapping: {
+        
+    }
+}
+
+Database: {
+    width: 800
+}
+
+Backend: {
+    grid-rows: 3
+}
+
+Backend.Repository: {
+
+}
+
+Backend.Entity: {
+
+}
+
+Backend.Service: {
+    grid-columns: 4
+}
+
+Backend.Controller: {
+    grid-columns: 4
+}
+
+Backend.Controller.Post: {
+    class: mapping
+}
+
+Backend.Controller.Put: {
+    class: mapping
+}
+
+Backend.Controller.Get: {
+    class: mapping
+}
+
+Backend.Controller.Delete: {
+    class: mapping
+}
+
+Database <-> Backend.Repository
+
+Backend.Entity -- Backend.Repository
+Backend.Entity: {
+    shape: sql_table
+    id: long { constraint: primary_key }
+}
+
+Backend.Controller.Post -> Backend.Service.POST.Create Dto: Provide Create Dto through Post Request
+Backend.Service.POST.Create Dto -> Backend.Service.POST.Create Dto Mapper: Convert Dto to Entity 
+Backend.Service.POST.Create Dto Mapper -> Backend.Service.POST.Save: Save new Entity in Repository
+Backend.Service.POST.Save -> Backend.Repository
+Backend.Service.POST.Save -> Backend.Service.POST.Get Dto Mapper
+Backend.Service.POST.Get Dto Mapper -> Backend.Controller.Post
+
+Backend.Controller.Put -> Backend.Service.PUT.Edit Dto
+Backend.Service.PUT.Edit Dto -> Backend.Service.PUT.Edit Dto Mapper 
+Backend.Service.PUT.Edit Dto Mapper -> Backend.Service.PUT.Save
+Backend.Service.PUT.Save -> Backend.Repository
+Backend.Service.PUT.Save -> Backend.Service.PUT.Get Dto Mapper
+Backend.Service.PUT.Get Dto Mapper -> Backend.Controller.Put
+
+Backend.Controller.Get -> Backend.Service.GET.Search: Search Parameters
+Backend.Service.GET.Search <-> Backend.Repository: Query Entities in Repository
+Backend.Service.GET.Search -> Backend.Service.GET.Get Dto Mapper
+Backend.Service.GET.Get Dto Mapper -> Backend.Service.GET.Get Dto: Convert Entity to Get Dto
+Backend.Service.GET.Get Dto -> Backend.Controller.Get: Provide Dto to Controller
+
+Backend.Controller.Delete -> Backend.Service.DELETE.Search: Search for Entity by ID
+Backend.Service.DELETE.Search <-> Backend.Repository
+Backend.Service.DELETE.Search -> Backend.Service.DELETE.Delete
+Backend.Service.DELETE.Delete -> Backend.Repository
+
+Backend.Controller.Get -> Frontend.API
+Backend.Controller.Post <-> Frontend.API
+Backend.Controller.Put <-> Frontend.API
+Backend.Controller.Delete <- Frontend.API
+
+Frontend.API <-> Frontend.Middleware
+Frontend.Middleware <-> Frontend.User Interface

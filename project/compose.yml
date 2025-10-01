@@ -1,0 +1,36 @@
+name: example_project
+
+services:
+  backend:
+    build:
+      context: ./backend/
+      dockerfile: ./Dockerfile
+      args:
+        APP_VERSION: "0.0.1-SNAPSHOT"
+    container_name: backend
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://example_db_container:5432/example_db
+      - SPRING_DATASOURCE_USERNAME=example
+      - SPRING_DATASOURCE_PASSWORD=example
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=create-drop
+    networks:
+      - example_network
+    ports:
+      - "8080:8080"
+  db:
+    image: postgres
+    container_name: example_db_container
+    environment:
+      - POSTGRES_USER=example
+      - POSTGRES_PASSWORD=example
+      - POSTGRES_DB=example_db
+    networks:
+      - example_network
+    ports:
+      - "5432:5432"
+
+networks:
+  example_network:
+    driver: bridge
