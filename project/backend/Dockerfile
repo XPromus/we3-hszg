@@ -9,7 +9,7 @@ COPY . .
 RUN gradle assemble
 
 WORKDIR /dist
-RUN tar --strip-components 1 -xf "/build/build/distributions/backend-$APP_VERSION.tar"
+RUN tar --strip-components 1 -xf "/build/build/distributions/example-$APP_VERSION.tar"
 
 FROM eclipse-temurin:21-alpine
 
