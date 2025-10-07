@@ -1,6 +1,11 @@
 #import "../../Template/definitions.typ": *
 
 #slide[
+  #set align(horizon + center)
+  #image("../../Diagrams/fullstack_overview_database.svg")
+]
+
+#slide[
   = Database
   #set align(horizon)
   - Enthält alle zu speichernden Daten

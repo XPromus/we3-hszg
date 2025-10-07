@@ -51,3 +51,8 @@ springWebSocketScope:
   title: WebSocket Scope
   publisher: Broadcom
   url: https://docs.spring.io/spring-framework/reference/web/websocket/stomp/scope.html
+
+stateOfCss2025:
+  type: Web
+  title: State of CSS 2025
+  url: https://2025.stateofcss.com/en-US/other-tools/
