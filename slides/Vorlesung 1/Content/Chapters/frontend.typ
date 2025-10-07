@@ -1,4 +1,4 @@
-#import "definitions.typ": *
+#import "../../Template/definitions.typ": *
 
 #slide[
   = Frontend
@@ -28,11 +28,11 @@
     columns: (1fr, 1fr),
     grid.cell(
       colspan: 1,
-      image("Diagrams/icons/devicon--svelte.svg", fit: "contain", width: 75pt)
+      image("../../Images/Icons/devicon--svelte.svg", fit: "contain", width: 75pt)
     ),
     grid.cell(
       colspan: 1,
-      image("Diagrams/icons/devicon--ts.svg", fit: "contain", width: 75pt)
+      image("../../Images/Icons/devicon--ts.svg", fit: "contain", width: 75pt)
     )
   )
 ]
@@ -41,7 +41,7 @@
   = Frontend - Frameworks
   #set align(horizon + center)
   #toolbox.side-by-side[
-    #image("Diagrams/icons/devicon--svelte.svg")
+    #image("../../Images/Icons/devicon--svelte.svg")
   ][
     - React
     - Vue
@@ -52,7 +52,7 @@
 #slide[
   = Frontend - Styling
   #figure(
-    image("Images/state_of_css.png", fit: "contain"),
+    image("../../Images/state_of_css.png", fit: "contain"),
     caption: "Ergebnisse des State of CSS 2025"
   )
   
@@ -106,7 +106,7 @@
   = Frontend - Build Tools
   #set align(horizon + center)
   #figure(
-    image("Diagrams/icons/devicon--vitejs.svg", fit: "contain", width: 200pt),
+    image("../../Images/Icons/devicon--vitejs.svg", fit: "contain", width: 200pt),
     caption: "Vite"
   )
 ]

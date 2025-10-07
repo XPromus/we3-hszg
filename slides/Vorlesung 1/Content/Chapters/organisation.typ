@@ -1,4 +1,4 @@
-#import "definitions.typ": *
+#import "../../Template/definitions.typ": *
 
 #slide[
   = Organisatorisches
@@ -11,7 +11,7 @@
   - Zur Abgabe gehören:
     - Beleg als PDF
     - Folien der Verteidigung
-    - Alle Projektdateien, in einem Git Repository (GitHub, GitLab (z.B.: #link("https://gitlab.hrz.tu-chemnitz.de/")[GitLab der TU Chemnitz]) etc.)
+    - Alle Projektdateien, in einem Git Repository
 ]
 
 #slide[
@@ -50,5 +50,6 @@
   - Docker/Podman zum Deployen von Anwendungen
   - Frontend Frameworks wie Svelte, Vue oder React...
   - Debugging Tools und Techniken
+  - Testing
   - Authentication
 ]

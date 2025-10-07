@@ -1,4 +1,4 @@
-#import "definitions.typ": *
+#import "../../Template/definitions.typ": *
 
 #slide[
   = Frontend - Package Manager

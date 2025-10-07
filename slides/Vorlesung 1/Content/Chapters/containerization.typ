@@ -1,4 +1,4 @@
-#import "definitions.typ": *
+#import "../../Template/definitions.typ": *
 
 #slide[
   #set align(horizon + center)
@@ -35,12 +35,12 @@
   #set align(center + horizon)
   #toolbox.side-by-side[
     #figure(
-      image("Diagrams/icons/logos--docker-icon.svg", height: 150pt),
+      image("../../Images/Icons/logos--docker-icon.svg", height: 150pt),
       caption: [#link("https://www.docker.com/")[Docker]]
     )
   ][
     #figure(
-      image("Diagrams/icons/devicon--podman.svg", height: 150pt),
+      image("../../Images/Icons/devicon--podman.svg", height: 150pt),
       caption: [#link("https://podman.io/")[Podman]]
     )
   ]

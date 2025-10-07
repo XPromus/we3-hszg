@@ -1,11 +1,19 @@
-#import "@preview/polylux:0.4.0": *
+#import "template/definitions.typ": *
+#import "template/template.typ": *
 
-#set page(paper: "presentation-16-9")
-#set text(size: 25pt, font: "Lato")
+#show: codly-init.with()
+#codly(languages: codly-languages)
 
-#slide[
-  #set align(horizon)
-  = Web Engineering 3
-  Christopher-Manuel Hilgner \
-  17.10.2025
-]
+#show link: underline
+#show link: set text(fill: blue)
+
+#show: setup
+
+#title-slide(
+  group: [Hochschule Zittau/Görlitz],
+  title: [Web Engineering 3],
+  subtitle: [Vorlesung 2],
+  extra: [Christopher-Manuel Hilgner]
+)
+
+#include "Content/content.typ"
