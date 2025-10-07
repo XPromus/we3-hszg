@@ -7,4 +7,7 @@
 #include "jakarta/jakarta.typ"
 #pagebreak()
 
+#include "lombok/lombok.typ"
+#pagebreak()
+
 #include "buildtools/buildtools.typ"
