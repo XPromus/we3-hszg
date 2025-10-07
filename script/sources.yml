@@ -56,3 +56,26 @@ stateOfCss2025:
   type: Web
   title: State of CSS 2025
   url: https://2025.stateofcss.com/en-US/other-tools/
+
+springbootOverview:
+  type: Web
+  title: Spring Boot
+  url: https://spring.io/projects/spring-boot
+
+springFrameworkOverview:
+  type: Web
+  title: Spring Framework Overview
+  url: https://docs.spring.io/spring-framework/reference/overview.html
+
+springFrameworkHistory:
+  type: Web
+  title: History of Spring and the Spring Framework
+  url: https://docs.spring.io/spring-framework/reference/overview.html#overview-history
+
+springAndSpringBootComparison:
+  type: Web
+  title: A Comparison Between Spring and Spring Boot
+  publisher: Baeldung
+  author: baeldung
+  date: 2024-05-11
+  url: https://www.baeldung.com/spring-vs-spring-boot

@@ -1,4 +1,3 @@
 #import "../../../template/definitions.typ": *
 
-=== Authentication
-
+== Jakarta EE

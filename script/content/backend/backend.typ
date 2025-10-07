@@ -1,7 +1,10 @@
 #import "../../template/definitions.typ": *
 
 = Backend
-#include "springboot.typ"
+#include "springboot/springboot.typ"
 #pagebreak()
 
-#include "gradle.typ"
+#include "jakarta/jakarta.typ"
+#pagebreak()
+
+#include "buildtools/buildtools.typ"

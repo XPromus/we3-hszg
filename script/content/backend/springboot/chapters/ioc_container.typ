@@ -1,4 +1,4 @@
-#import "../../../template/definitions.typ": *
+#import "../../../../template/definitions.typ": *
 
 === IoC Container
 In der Anwendung wird der IoC Container durch `org.springframework.context.ApplicationContext` representiert. Er instantiiert, konfiguriert und assembled Beans. Die Instruktionen für diese Operationen werden dem Container durch das Lesen von Konfigurations-Metadaten übergeben. Diese Metadaten können über folgende Wege definiert werden:

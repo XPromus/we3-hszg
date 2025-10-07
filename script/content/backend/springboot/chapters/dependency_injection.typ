@@ -1,4 +1,4 @@
-#import "../../../template/definitions.typ": *
+#import "../../../../template/definitions.typ": *
 
 === Dependency Injection
 #link("https://docs.spring.io/spring-framework/reference/core/beans/dependencies/factory-collaborators.html")[Ressource zu Dependency Injection @springDependencyInjection]

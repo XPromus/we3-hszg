@@ -1,3 +1,3 @@
 #import "../../template/definitions.typ": *
 
-=== Gradle
+= Dev Ops

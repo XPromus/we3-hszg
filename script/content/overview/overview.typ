@@ -1,5 +1,5 @@
 #import "@preview/lilaq:0.5.0" as lq
-#import "../template/definitions.typ": *
+// #import "../../template/definitions.typ": *
 
 = Übersicht
 
@@ -40,3 +40,5 @@ Die aktuelle Verteilung der CSS Frameworks nach dem State of CSS 2025 @stateOfCs
     range(4),
   ),
 )
+
+#include "spring_overview.typ"

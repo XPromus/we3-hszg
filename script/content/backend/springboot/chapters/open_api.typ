@@ -1,4 +1,4 @@
-#import "../../../template/definitions.typ": *
+#import "../../../../template/definitions.typ": *
 
 === OpenAPI UI
 ```kotlin
@@ -10,6 +10,6 @@ dependencies {
 *URL:* #link("http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config")[http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config]
 
 #figure(
-  image("../../../images/swagger_ui.png", fit: "contain", width: 50%),
+  image("../../../../images/swagger_ui.png", fit: "contain", width: 50%),
   caption: "Swagger UI zum Darstellen und Testen der REST Endpunkte"
 )
