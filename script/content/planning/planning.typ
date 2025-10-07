@@ -1,4 +1,4 @@
-#import "../template/definitions.typ": *
+#import "../../template/definitions.typ": *
 
 = Ablauf & Planung
 - Ziel des Moduls: Projektarbeit mit einem Beleg und einer Präsentation als finales Ziel
