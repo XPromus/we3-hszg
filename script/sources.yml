@@ -110,3 +110,30 @@ idempotentMethods:
   type: Web
   title: Idempotent Methods
   url: https://httpwg.org/specs/rfc9110.html#idempotent.methods
+
+httpStatusCodes:
+  type: Web
+  title: Status Codes
+  url: https://httpwg.org/specs/rfc9110.html#status.codes
+
+modelViewControllerMdn:
+  type: Web
+  title: MVC
+  url: https://developer.mozilla.org/en-US/docs/Glossary/MVC
+
+ormWikipedia:
+  type: Web
+  title: Object–relational mapping
+  publisher: Wikipedia
+  url: https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping
+
+ormItSchulung:
+  type: Web
+  title: Was ist Object-Relational Mapping (ORM)
+  publisher: IT-Schulungen.com
+  url: https://www.it-schulungen.com/wir-ueber-uns/wissensblog/was-ist-object-relational-mapping-orm.html
+
+codecademyCRUD:
+  type: Web
+  title: What is CRUD? Explained
+  url: https://www.codecademy.com/article/what-is-crud-explained

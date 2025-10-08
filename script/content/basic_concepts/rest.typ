@@ -1,8 +1,10 @@
-#import "../../template/definitions.typ"
+#import "../../template/definitions.typ": *
 
 == REST
 #text(weight: "bold")[RE]presentational #text(weight: "bold")[S]tate #text(weight: "bold")[T]ransfer ist ein Architektur Stil um Standards zwischen Computer Systemen im Web zu etablieren, die Kommunikation zwischen diesen Systemen vereinfachern.
 RESTful Systeme zeichnen sich vor allem dadurch aus, dass sie keinen State besitzen und die Angelegenheiten von Server und Client separieren. @whatIsREST \
+
+In einer RESTful Umgebung werden außerdem CRUD #customref(<crud>) Operationen direkt auf HTTP Methoden #customref(<http_methods>) gemapped. @codecademyCRUD
 
 === Unabhängigkeit
 Die Implementation von Server und Client sollte unabhängig voneinander sein. 

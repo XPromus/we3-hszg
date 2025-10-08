@@ -112,11 +112,12 @@ Folgender Stack kommt hier in der Vorlesung zum Einsatz
     )
   ]
 ]
+#pagebreak()
+
+#include "spring_overview.typ"
+#pagebreak()
 
 #include "svelte-overview.typ"
 #pagebreak()
 
 #include "tailwindcss-overview.typ"
-#pagebreak()
-
-#include "spring_overview.typ"

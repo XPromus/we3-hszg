@@ -17,4 +17,6 @@
 #show link: underline
 #show link: set text(fill: blue)
 
-
+#let customref(label) = {
+  [(#ref(label, form: "normal"))]
+}
