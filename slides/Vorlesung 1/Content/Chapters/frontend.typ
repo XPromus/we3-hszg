@@ -11,16 +11,9 @@
   - Interaktion durch den Nutzer
   - Darstellung der vom Backend erhaltenen Daten
   - Input für neue Daten
-]
-
-#slide[
-  = Frontend - Bestandteile
-  #set align(horizon)
-  - Framework oder Vanilla
-  - CSS 
-  - Build Tool
-  - Package Manager
-  - Weitere Dependencies für unterschiedliche Funktionalitäten
+  - Durchdachtes User-Interface mit guter User-Experience
+  #set align(center)
+  #image("../../Images/hszg_webpage.png", fit: "contain", width: 65%)
 ]
 
 #slide[
@@ -65,6 +58,18 @@
 ]
 
 #slide[
+  = Frontend - Svelte
+  #set align(horizon)
+  - Framework zum Bauen von User-Interfaces für das Web
+  - Deklarative Erstellung von Komponenten mit HTML, CSS und JavaScript
+  - Nutzen eines Compilers, um die Komponenten in imperatives JavaScript, für den Browser, zu überführen
+  - Erweiterung mit SvelteKit für:
+    - Server-Side-Rendering
+    - Routing
+    - Code Splitting
+]
+
+#slide[
   = Frontend - Styling
   Nutzungsdaten von CSS Frameworks nach dem State of CSS 2025
 
@@ -97,7 +102,8 @@
 #slide[
   = Frontend - Styling
   #set align(horizon + center)
-  #image("../../Images/Icons/devicon--tailwindcss.svg", fit: "contain", width: 60%)
+  #image("../../Images/Icons/devicon--tailwindcss.svg", fit: "contain", width: 50%)
+  *TailwindCSS*
 ]
 
 #slide[
