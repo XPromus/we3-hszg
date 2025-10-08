@@ -1,0 +1,32 @@
+direction: right
+
+Container Engine.Docker: {
+    icon: ../Images/Icons/logos--docker-icon.svg
+}
+
+Container Engine.Podman: {
+    icon: ../Images/Icons/devicon--podman.svg
+}
+
+Database: {
+    icon: ../Images/Icons/devicon--postgresql.svg
+}
+
+Backend: {
+    icon: ../Images/Icons/devicon--spring.svg
+}
+
+Frontend: {
+    icon: ../Images/Icons/devicon--svelte.svg
+    style: {
+        stroke: red
+    }
+}
+
+Database -> Backend: Lesen
+Backend -> Database: Schreiben
+Backend <-> Frontend: Interaktion über REST Schnittstellen
+
+Container Engine -- Database: Container
+Container Engine -- Backend: Container
+Container Engine -- Frontend: Container

@@ -1,6 +1,11 @@
 #import "../../Template/definitions.typ": *
 
 #slide[
+  #set align(horizon + center)
+  #image("../../Diagrams/fullstack_overview_frontend.svg")
+]
+
+#slide[
   = Frontend
   #set align(horizon)
   - Interaktion durch den Nutzer

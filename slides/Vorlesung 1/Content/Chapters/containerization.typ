@@ -6,6 +6,11 @@
 ]
 
 #slide[
+  #set align(horizon + center)
+  #image("../../Diagrams/fullstack_overview_container.svg")
+]
+
+#slide[
   = Containerization
   #set align(horizon)
   - Erstellen von Umgebungen (Containern), die sich, unabhängig von ihrer Umgebung, immer gleich verhalten

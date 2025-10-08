@@ -1,6 +1,11 @@
 #import "../../Template/definitions.typ": *
 
 #slide[
+  #set align(horizon + center)
+  #image("../../Diagrams/fullstack_overview_backend.svg")
+]
+
+#slide[
   = Backend
   #set align(horizon)
   - Definiert Datenstruktur mit Tabellen und Entities
