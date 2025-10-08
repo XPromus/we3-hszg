@@ -1,6 +1,7 @@
 #import "../../Template/definitions.typ": *
 
 #slide[
+  #toolbox.register-section[Grundbegriffe]
   = Grundbegriffe
   #set align(horizon)
   *Client Side* \

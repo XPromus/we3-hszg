@@ -1,11 +1,14 @@
 #import "../../Template/definitions.typ": *
 
 #slide[
+  =
+  #toolbox.register-section[Containerization]
   #set align(horizon + center)
   #text(size: 50pt)[*It works on my machine*]
 ]
 
 #slide[
+  =
   #set align(horizon + center)
   #image("../../Diagrams/fullstack_overview_container.svg")
 ]
@@ -20,7 +23,7 @@
 ]
 
 #slide[
-  = Containerization - Bestandteile
+  = Bestandteile
   #set align(horizon + center)
   #toolbox.side-by-side[
     *Dockerfile* \

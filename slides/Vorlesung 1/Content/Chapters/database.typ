@@ -1,6 +1,8 @@
 #import "../../Template/definitions.typ": *
 
 #slide[
+  =
+  #toolbox.register-section[Database]
   #set align(horizon + center)
   #image("../../Diagrams/fullstack_overview_database.svg")
 ]

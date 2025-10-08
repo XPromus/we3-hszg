@@ -1,6 +1,8 @@
 #import "../../Template/definitions.typ": *
 
 #slide[
+  =
+  #toolbox.register-section[Backend]
   #set align(horizon + center)
   #image("../../Diagrams/fullstack_overview_backend.svg")
 ]
@@ -15,7 +17,7 @@
 ]
 
 #slide[
-  = Backend - Bestandteile
+  = Bestandteile
   #set align(center)
   #v(75pt)
   #toolbox.side-by-side[
@@ -35,13 +37,14 @@
 ]
 
 #slide[
+  =
   #set align(horizon + center)
   #image("../../Images/Icons/logos--spring.svg", fit: "contain")
-  #image("../../Images/spring_boot_logo.png", fit: "contain")
+  #image("../../Images/spring_boot_logo.png", fit: "contain", width: 80%)
 ]
 
 #slide[
-  = Backend - Spring & Springboot
+  = Spring & Springboot
   #set align(horizon)
   *Spring*
   - Stellt Infrastruktur bereit zur Erstellung von Enterprise-Anwendungen
@@ -55,7 +58,7 @@
 ]
 
 #slide[
-  = Backend - Alternativen
+  = Alternativen
   #set align(horizon + center)
   #grid(
     rows: (1fr, 1fr, 1fr)
@@ -69,7 +72,7 @@
 ]
 
 #slide[
-  = Backend - Gradle
+  = Gradle
   #image("../../Images/Icons/devicon--gradle-wordmark.svg", fit: "contain", width: 150pt)
   #set align(horizon)
   - Automatisierung von Building, Testing und Deployment
@@ -81,7 +84,7 @@
 ]
 
 #slide[
-  = Backend - Gradle Projekt Struktur
+  = Gradle Projekt Struktur
   #set align(horizon + center)
   ```markdown
     project

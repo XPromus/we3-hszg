@@ -1,7 +1,7 @@
 #import "../../Template/definitions.typ": *
 
 #slide[
-  = Frontend - Package Manager
+  = Package Manager
   #set align(horizon)
   - Definition der Abhängigkeiten durch eine JSON-Datei
   - Verwaltung der Abhängigkeiten mit Versionierung

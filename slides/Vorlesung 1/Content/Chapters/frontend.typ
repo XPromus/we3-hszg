@@ -1,6 +1,8 @@
 #import "../../Template/definitions.typ": *
 
 #slide[
+  =
+  #toolbox.register-section[Frontend]
   #set align(horizon + center)
   #image("../../Diagrams/fullstack_overview_frontend.svg")
 ]
@@ -17,7 +19,7 @@
 ]
 
 #slide[
-  = Frontend - Frameworks
+  = Frameworks
   #set align(horizon + center)
   #let icon-width = 100pt
   #grid(
@@ -39,7 +41,7 @@
 ]
 
 #slide[
-  = Frontend - Frameworks
+  = Frameworks
   #set align(center + horizon)
   In dieser Vorlesung kommt SvelteKit mit TypeScript zum Einsatz.
   Andere Frameworks werden auch kurz beleuchtet.
@@ -58,7 +60,7 @@
 ]
 
 #slide[
-  = Frontend - Svelte
+  = Svelte
   #set align(horizon)
   - Framework zum Bauen von User-Interfaces für das Web
   - Deklarative Erstellung von Komponenten mit HTML, CSS und JavaScript
@@ -70,7 +72,7 @@
 ]
 
 #slide[
-  = Frontend - Styling
+  = CSS Frameworks
   Nutzungsdaten von CSS Frameworks nach dem State of CSS 2025
 
   #set align(horizon + center)
@@ -100,16 +102,15 @@
 ]
 
 #slide[
-  = Frontend - Styling
   #set align(horizon + center)
   #image("../../Images/Icons/devicon--tailwindcss.svg", fit: "contain", width: 50%)
   *TailwindCSS*
 ]
 
 #slide[
-  = Frontend - Styling
+  = TailwindCSS
   #set align(horizon)
-  - Tailwind CSS als Framework für das Styling
+  - TailwindCSS als Framework für das Styling
   - Es stellt keine Komponenten, sondern nur kleine Klassen bereit
   - Näher an Vanilla-CSS als Frameworks wie Bootstrap
   ```html
@@ -120,7 +121,7 @@
 ]
 
 #slide[
-  = Frontend - Build-Tools
+  = Build-Tools
   #set align(horizon)
   - Überführen den geschriebenen Code in eine ausführbare Version für den Browser
   - Viele Features von Frameworks werden nicht von Browsern unterstützt
@@ -128,7 +129,7 @@
 ]
 
 #slide[
-  = Frontend - Build-Tools
+  = Build-Tools
   #set align(horizon)
   ```jsx
     const App = () => <h1>Hello, World!</h1>;
@@ -142,7 +143,7 @@
 ]
 
 #slide[
-  = Frontend - Build-Tools
+  = Build-Tools
   #set align(horizon)
   *Bundling*
   - Zusammenführen von einzelnen Modulen für effizienteres Ausführen im Browser
@@ -151,7 +152,7 @@
 ]
 
 #slide[
-  = Frontend - Build-Tools
+  = Build-Tools
   #set align(horizon + center)
   #image("../../Images/Icons/devicon--vitejs.svg", fit: "contain", width: 200pt)
   *Vite*

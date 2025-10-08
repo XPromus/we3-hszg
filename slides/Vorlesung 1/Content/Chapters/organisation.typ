@@ -1,6 +1,7 @@
 #import "../../Template/definitions.typ": *
 
 #slide[
+  #toolbox.register-section[Organisatorisches]
   = Organisatorisches
   #set align(horizon)
   - Vorlesungen + Seminar

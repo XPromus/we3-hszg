@@ -1,6 +1,7 @@
 #import "../../Template/definitions.typ": *
 
 #slide[
+  #toolbox.register-section[Git]
   = Versionierung mit Git
   #set align(horizon)
   - Versionierung aller Dateien in einem Projekt
@@ -9,7 +10,7 @@
 ]
 
 #slide[
-  = Git Zustände
+  = Zustände
   #set align(horizon)
   *Modified*
     - Datei wurde geändert aber noch in die Datenbank committed
@@ -20,7 +21,7 @@
 ]
 
 #slide[
-  = Git Workflow
+  = Workflow
   #set align(horizon)
   1. Modifizierung von Dateien
   2. Nur Änderungen stagen, die Teil des nächsten Commits werden sollen
