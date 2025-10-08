@@ -38,7 +38,7 @@ Seit Spring 6.0 wurden die Spezifikationen auf das Level von Jakarta EE 9 gehobe
 Damit wurde auch die `javax` Packages als Basis ausrangiert und durch den `jakarta` Namespace ersetzt.
 Kompatiblität mit EE 10 wurde auch bereits hergestellt. \
 
-Auch die Anwendungsbereicht von Spring Applikationen hat sich über die Zeit verändert.
+Auch die Anwendungsbereiche von Spring Applikationen haben sich über die Zeit verändert.
 Früher wurden Anwendungen entwickelt um auf einem Application Server eingetzt zu werden.
 Heute wird mit Springboot eher in einer Devops- und Cloud-Freundlichen Weise entwickelt.
 Dafür wurde der Servlet Container in das Programm eingebettet und sein Austauschen trivialisiert.

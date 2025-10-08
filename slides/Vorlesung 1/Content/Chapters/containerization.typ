@@ -14,7 +14,7 @@
   = Containerization
   #set align(horizon)
   - Erstellen von Umgebungen (Containern), die sich, unabhängig von ihrer Umgebung, immer gleich verhalten
-  - Ähnlich wie eine Virtuelle Maschine, allerdings ohne virtualisierung der Hardware
+  - Ähnlich wie eine Virtuelle Maschine, allerdings ohne Virtualisierung der Hardware
   - Alle Container laufen über den gleichen Kernel -> Mehr Performance als mit VMs
   - Software wird in diesen Containern deployed
 ]
@@ -27,10 +27,10 @@
     Beschreibt den Aufbau von einem Image
   ][
     *Image* \
-    Eine Abbildung der Software, die eingesetzt werden soll mit allen benötigten Abhängigkeiten.
+    Eine Abbildung der Software, die eingesetzt werden soll, mit allen benötigten Abhängigkeiten.
   ][
     *Container* \
-    Die laufende Softwarem, basierend auf einem Image
+    Die laufende Software, basierend auf einem Image
   ]
 ]
 

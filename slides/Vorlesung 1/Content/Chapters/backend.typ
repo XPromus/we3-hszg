@@ -8,25 +8,10 @@
 #slide[
   = Backend
   #set align(horizon)
-  - Definiert Datenstruktur mit Tabellen und Entities
-  - Bevölkert Datenbank mit Daten und liest Daten aus
-  - Enthält Business Logik der Anwendung
-  - Enthält REST Endpunkte mit Mappings für Http Funktionen
-  #v(50pt)
-  In dieser Vorlesung kommt Spring mit Kotlin zum Einsatz
-  #image("../../Images/Icons/devicon--spring.svg")
-]
-
-#slide[
-  = Backend
-  #set align(horizon + center)
-  #toolbox.side-by-side[
-    #image("../../Images/Icons/devicon--spring.svg")
-  ][
-    #image("../../Images/Icons/MIcronautLogo_Horizontal.svg", fit: "contain")
-    #v(50pt)
-    #image("../../Images/Icons/logos--quarkus.svg", fit: "contain")
-  ]
+  - Definiert Datenstruktur mit Tabellen und Entities (ORM)
+  - Bevölkert Datenbank mit Daten und liest Daten aus (CRUD)
+  - Enthält Business-Logik der Anwendung
+  - Enthält REST-Endpunkte mit Mappings für HTTP-Funktionen
 ]
 
 #slide[
@@ -36,7 +21,7 @@
   #toolbox.side-by-side[
     *Repositories* \
     #v(25pt)
-    Lesen der und Schreiben auf die Datenbank
+    Lesen und Schreiben auf die Datenbank
   ][
     *Services* \
     _mit DTOs und Mappern_
@@ -45,12 +30,47 @@
   ][
     *Controller* \
     #v(25pt)
-    Erstellung der API Endpunkte über Mappings
+    Erstellung der API-Endpunkte über Mappings
+  ]
+]
+
+#slide[
+  #set align(horizon + center)
+  #image("../../Images/Icons/logos--spring.svg", fit: "contain")
+  #image("../../Images/spring_boot_logo.png", fit: "contain")
+]
+
+#slide[
+  = Backend - Spring & Springboot
+  #set align(horizon)
+  *Spring*
+  - Stellt Infrastruktur bereit zur Erstellung von Enterprise-Anwendungen
+  - Kern ist dabei Dependency Injection mit dem IoC-Container
+  - Weitere Funktionalitäten können über Module hinzugefügt werden
+  - Durch Spring soll Entwicklungszeit stark verkürzt werden
+  *Springboot*
+  - Erweiterung und Abstraktion des Spring-Frameworks
+  - Erstellung von Spring-Anwendungen mit minimaler Konfiguration
+  - _Starter Dependencies_ ermöglichen schnelle Erstellung von Anwendungen
+]
+
+#slide[
+  = Backend - Alternativen
+  #set align(horizon + center)
+  #grid(
+    rows: (1fr, 1fr, 1fr)
+  )[
+    #image("../../Images/Icons/devicon--spring.svg")
+  ][
+    #image("../../Images/Icons/MIcronautLogo_Horizontal.svg", fit: "contain")
+  ][
+    #image("../../Images/Icons/logos--quarkus.svg", fit: "contain")
   ]
 ]
 
 #slide[
   = Backend - Gradle
+  #image("../../Images/Icons/devicon--gradle-wordmark.svg", fit: "contain", width: 150pt)
   #set align(horizon)
   - Automatisierung von Building, Testing und Deployment
   - Verwaltet Abhängigkeiten

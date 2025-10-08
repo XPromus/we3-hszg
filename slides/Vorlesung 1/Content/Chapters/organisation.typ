@@ -11,13 +11,13 @@
   - Zur Abgabe gehören:
     - Beleg als PDF
     - Folien der Verteidigung
-    - Alle Projektdateien, in einem Git Repository
+    - Alle Projektdateien, in einem Git-Repository
 ]
 
 #slide[
   = Beleg
   #set align(horizon)
-  - Keine festgelegte Seitenanzahl (bei mir waren es damals 10-15 Seiten)
+  - Keine festgelegte Seitenanzahl (bei mir waren es damals 10 bis 15 Seiten)
   - Anforderungsanalyse
   - Beschreibung der Umsetzung
   - Gründe für Entscheidungen bei der Entwicklung darstellen
@@ -28,6 +28,7 @@
   = Verteidigung
   #set align(horizon)
   Dauer: ca. 20 Minuten
+  - Anforderungen bzw. Ziele der Anwendung
   - Demonstration des finalen Projekts
   - Umsetzung Vorstellung
     - Technologien
@@ -46,10 +47,10 @@
   = Inhalte
   #set align(horizon)
   - Entwicklung von Full-Stack Web Anwendungen
-  - Spring für Backend Entwicklung
+  - Spring für Backend-Entwicklung
   - Docker/Podman zum Deployen von Anwendungen
-  - Frontend Frameworks wie Svelte, Vue oder React...
-  - Debugging Tools und Techniken
+  - Frontend-Frameworks wie Svelte, Vue oder React...
+  - Debugging-Tools und Techniken
   - Testing
   - Authentication
 ]

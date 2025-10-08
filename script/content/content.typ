@@ -19,4 +19,7 @@
 #include "frontend/frontend.typ"
 #pagebreak()
 
+#include "devops/devops.typ"
+#pagebreak()
+
 #include "debugging/debugging.typ"

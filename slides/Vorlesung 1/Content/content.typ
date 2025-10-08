@@ -1,3 +1,5 @@
+#include "agenda.typ"
+
 #include "Chapters/organisation.typ"
 
 #include "Chapters/basic_concepts.typ"

@@ -5,7 +5,7 @@
   #set align(horizon)
   - Versionierung aller Dateien in einem Projekt
   - Mit jedem Commit wird ein Snapshot vom aktuellen Stand gemacht
-  - Wenn keine Änderungen an einer Datei vorgenommen wurden wird auf den Snapshot mit der letzten Änderung verwiesen
+  - Wenn keine Änderungen an einer Datei vorgenommen wurden, wird auf den Snapshot mit der letzten Änderung verwiesen
 ]
 
 #slide[
@@ -14,9 +14,9 @@
   *Modified*
     - Datei wurde geändert aber noch in die Datenbank committed
   *Staged*
-    - Modifizierte Datei wurde markiert, damit sie in den nächsten Commit Snapshot kommt
+    - Modifizierte Datei wurde markiert, damit sie in den nächsten Commit-Snapshot kommt
   *Committed*
-    - Daten wurde erfolgreich in der Datenbank gespeichert
+    - Daten wurden erfolgreich in der Datenbank gespeichert
 ]
 
 #slide[

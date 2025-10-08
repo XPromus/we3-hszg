@@ -11,6 +11,7 @@
   - Enthält alle zu speichernden Daten
   - Manuelle Erstellung bzw. Konfigurierung nicht nötig
   - Erstellung der Tabellen geschieht durch das Backend
+  - Manuelle Eingriffe nur dann in speziellen Situationen wie Migration nötig
   In dieser Vorlesung kommt PostgreSQL zum Einsatz
   #image("../../Images/Icons/devicon--postgresql.svg")
 ]

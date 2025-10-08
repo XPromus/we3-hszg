@@ -25,8 +25,30 @@
 
 #slide[
   = Frontend - Frameworks
+  #set align(horizon + center)
+  #let icon-width = 100pt
+  #grid(
+    columns: (1fr, 1fr),
+    inset: 20pt,
+  )[
+    #image("../../Images/Icons/devicon--angular.svg", fit: "contain", width: icon-width)
+    *Angular*
+  ][
+    #image("../../Images/Icons/logos--vue.svg", fit: "contain", width: icon-width)
+    *VueJS*
+  ][
+    #image("../../Images/Icons/devicon--react.svg", fit: "contain", width: icon-width)
+    *ReactJS*
+  ][
+    #image("../../Images/Icons/devicon--svelte.svg", width: icon-width)
+    *SvelteKit*
+  ]
+]
+
+#slide[
+  = Frontend - Frameworks
   #set align(center + horizon)
-  In dieser Vorlesung kommt Svelte mit TypeScript zum Einsatz.
+  In dieser Vorlesung kommt SvelteKit mit TypeScript zum Einsatz.
   Andere Frameworks werden auch kurz beleuchtet.
   
   #grid(
@@ -43,19 +65,10 @@
 ]
 
 #slide[
-  = Frontend - Frameworks
-  #set align(horizon + center)
-  #toolbox.side-by-side[
-    #image("../../Images/Icons/devicon--svelte.svg")
-  ][
-    - React
-    - Vue
-    - Angular
-  ]
-]
-
-#slide[
   = Frontend - Styling
+  Nutzungsdaten von CSS Frameworks nach dem State of CSS 2025
+
+  #set align(horizon + center)
   #let usage_data = (
     (name: "shadcn", usage: 19),
     (name: "Custom", usage: 24),
@@ -63,10 +76,7 @@
     (name: "TailwindCSS", usage: 51)
   )
 
-  Die aktuelle Verteilung der CSS Frameworks nach dem State of CSS 2025:
-
   #lq.diagram(
-    
     yaxis: (
       ticks: usage_data.map(element => element.name)
         .enumerate(),
@@ -75,6 +85,8 @@
     xaxis: (
       label: [Nutzung in %]
     ),
+    width: 100%,
+    height: 80%,
     lq.hbar(
       usage_data.map(element => element.usage),
       range(4),
@@ -84,10 +96,16 @@
 
 #slide[
   = Frontend - Styling
+  #set align(horizon + center)
+  #image("../../Images/Icons/devicon--tailwindcss.svg", fit: "contain", width: 60%)
+]
+
+#slide[
+  = Frontend - Styling
   #set align(horizon)
   - Tailwind CSS als Framework für das Styling
-  - Es stellt keine Komponenten sondern nur kleine Klassen bereit
-  - Näher an Vanilla CSS als Frameworks wie Bootstrap
+  - Es stellt keine Komponenten, sondern nur kleine Klassen bereit
+  - Näher an Vanilla-CSS als Frameworks wie Bootstrap
   ```html
     <div class="flex flex-col bg-slate-500">
       <!-- Content -->
@@ -96,15 +114,15 @@
 ]
 
 #slide[
-  = Frontend - Build Tools
+  = Frontend - Build-Tools
   #set align(horizon)
   - Überführen den geschriebenen Code in eine ausführbare Version für den Browser
   - Viele Features von Frameworks werden nicht von Browsern unterstützt
-  - Build Tools überführen diesen Code in brauchbaren Code für den Browser
+  - Build-Tools überführen diesen Code in brauchbaren Code für den Browser
 ]
 
 #slide[
-  = Frontend - Build Tools
+  = Frontend - Build-Tools
   #set align(horizon)
   ```jsx
     const App = () => <h1>Hello, World!</h1>;
@@ -118,21 +136,19 @@
 ]
 
 #slide[
-  = Frontend - Build Tools
+  = Frontend - Build-Tools
   #set align(horizon)
   *Bundling*
   - Zusammenführen von einzelnen Modulen für effizienteres Ausführen im Browser
   *Transpilieren*
-  - Kompatiblität zu älteren Browsern herstellen
+  - Kompatibilität zu älteren Browsern herstellen
 ]
 
 #slide[
-  = Frontend - Build Tools
+  = Frontend - Build-Tools
   #set align(horizon + center)
-  #figure(
-    image("../../Images/Icons/devicon--vitejs.svg", fit: "contain", width: 200pt),
-    caption: "Vite"
-  )
+  #image("../../Images/Icons/devicon--vitejs.svg", fit: "contain", width: 200pt)
+  *Vite*
 ]
 
 #include "package_manager.typ"
