@@ -79,3 +79,29 @@ springAndSpringBootComparison:
   author: baeldung
   date: 2024-05-11
   url: https://www.baeldung.com/spring-vs-spring-boot
+
+whatIsREST:
+  type: Web
+  title: What is REST?
+  publisher: Codecademy Team
+  url: https://www.codecademy.com/article/what-is-rest
+
+httpSpecsGET:
+  type: Web
+  title: Method Definitions - GET
+  url: https://httpwg.org/specs/rfc9110.html#GET
+
+httpSpecsPOST:
+  type: Web
+  title: Method Definitions - POST
+  url: https://httpwg.org/specs/rfc9110.html#POST
+
+httpSpecsPUT:
+  type: Web
+  title: Method Definitions - PUT
+  url: https://httpwg.org/specs/rfc9110.html#PUT
+
+httpSpecsDELETE:
+  type: Web
+  title: Method Definitions - DELETE
+  url: https://httpwg.org/specs/rfc9110.html#DELETE

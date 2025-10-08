@@ -1,4 +1,9 @@
 #import "template/definitions.typ": *
+
+#import "glossary/glossary.typ": glossary-entrys
+#show: make-glossary
+#register-glossary(glossary-entrys)
+
 #show: codly-init.with()
 #codly(languages: codly-languages)
 #show: frame-style(styles.boxy)
@@ -22,6 +27,9 @@
 ])
 
 #include "content/content.typ"
+#pagebreak()
+
+#print-glossary(glossary-entrys)
 #pagebreak()
 
 #bibliography("sources.yml", title: "Quellenverzeichnis")
