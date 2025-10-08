@@ -31,7 +31,7 @@ Wenn der Server mit einer Menge an Daten antworten will muss er einen Content Ty
 Auch hier werden wieder MIME Types genutzt. \
 Dazu wird auch noch ein Status Code angehangen.
 
-=== Verben
+=== Methoden
 HTTP definiert eine Menge an Verben, damit das Ziel einer Request einfacher zu erkennen ist und auch direkt klar ist, was das zu erwartende Ergebnis der Anfrage ist.
 Die folgenden vier HTTP Verben kommen dabei am häufigsten zum Einsatz kommen: *GET*, *POST*, *PUT*, *DELETE*
 
@@ -82,6 +82,13 @@ Wenn die DELETE Methode erfolgreich war, sollte der Server mit einem der folgend
 - 204 (No Content) Löschen wurde ausgeführt und keine weiteren Informationen sind nötig
 - 200 (OK) Löschen war erfolgreich und die Response enthält noch Informationen über den aktuellen Status
 @httpSpecsDELETE
+
+==== Idempotente Methoden
+Eine Methode wird dann als idempotent angesehen, wenn sie bei multipler Ausführung den gleichen Effekt auf dem Server haben. 
+PUT und DELETE sind dabei automatisch idempotent. 
+Außerdem sind _safe request methods_ idempotent. \
+
+Die Definition von idempotent ist dabei nur wichtig für den Inhalt, den der Nutzer angefragt hat. Der Server kann immer noch Logs über Anfragen führen oder andere Nebeneffekte implementieren, die den idempotenten Status nicht gefährden. @idempotentMethods
 
 === Status Codes
 Wenn der Server eine Response an den Client schickt wird auch immer ein Response Code mitgeliefert. 

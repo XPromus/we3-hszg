@@ -105,3 +105,8 @@ httpSpecsDELETE:
   type: Web
   title: Method Definitions - DELETE
   url: https://httpwg.org/specs/rfc9110.html#DELETE
+
+idempotentMethods:
+  type: Web
+  title: Idempotent Methods
+  url: https://httpwg.org/specs/rfc9110.html#idempotent.methods
