@@ -10,6 +10,9 @@
 
 #set heading(numbering: "1.")
 
+#show link: underline
+#show link: set text(fill: blue)
+
 #include "template/titlepage.typ"
 #pagebreak()
 
@@ -27,6 +30,9 @@
 ])
 
 #include "content/content.typ"
+#pagebreak()
+
+#include "seminar/seminar.typ"
 #pagebreak()
 
 #print-glossary(glossary-entrys)
