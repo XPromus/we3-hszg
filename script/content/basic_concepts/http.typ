@@ -57,13 +57,15 @@ Einige Beispiele hier sind:
 - Daten an eine bereits existierende Ressource anhängen
 
 Der Server gibt dann mit Status Codes an, was das Ergebnis der POST Request ist.
-Die erwarteten Status Codes sind hier: 206 (Partial Content), 304 (Not Modified), 416 (Range Not Satisfiable)
+Die erwarteten Status Codes sind hier: 206 (Partial Content), 304 (Not Modified), 416 (Range Not Satisfiable) \
+
 Wenn durch die POST Request eine neue Ressource erstellt wurde, sollte der Server mit 201 (Created) antworten und den Ort der neuen Ressource in die Response packen. @httpSpecsPOST
 
 ==== PUT
 Die PUT Methode erstellt eine Anfrage an den Server, eine bereits vorhandene Ressource zu ersetzen oder neu zu erstellen, basierend auf den Daten in der Anfrage. 
 Wenn die angesprochene Ressource noch nicht existiert, wird sie neu erstellt. 
-Nach dem Erstellen einer neuen Ressource muss der Server den Client darüber mit dem Status Code 201 (Creted) informieren.
+Nach dem Erstellen einer neuen Ressource muss der Server den Client darüber mit dem Status Code 201 (Creted) informieren. \
+
 Wurde kein neuer Eintrag angelegt, muss der Server den Client über den Erfolg der Request mit dem Status Code 20 (OK) oder 204 (No Content) informieren. 
 Der Server sollte die Daten in der PUT Request validieren.
 Hier ist vor allem das Ziel zu überprüfen, ob die bereitgestellen Daten mit der ausgewählten Ressource übereinstimmen. 

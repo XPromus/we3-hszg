@@ -26,7 +26,7 @@ Folgender Stack kommt hier in der Vorlesung zum Einsatz
   ),
   title: "Techstack"
 )[
-  #let icon-width = 70pt
+  #let icon-width = 50pt
   #showybox(
     frame: (
       border-color: red.darken(50%),
@@ -105,9 +105,10 @@ Folgender Stack kommt hier in der Vorlesung zum Einsatz
   )[
     #set align(horizon + center)
     #grid(
-      columns: (1fr, 1fr),
+      columns: (1fr, 1fr, 1fr),
       image("../../images/Icons/logos--docker-icon.svg", fit: "contain", width: icon-width),
       image("../../images/Icons/devicon--podman.svg", fit: "contain", width: icon-width),
+      image("../../images/Icons/devicon--git.svg", fit: "contain", width: icon-width)
     )
   ]
 ]
