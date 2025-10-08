@@ -102,6 +102,7 @@
 ]
 
 #slide[
+  =
   #set align(horizon + center)
   #image("../../Images/Icons/devicon--tailwindcss.svg", fit: "contain", width: 50%)
   *TailwindCSS*
