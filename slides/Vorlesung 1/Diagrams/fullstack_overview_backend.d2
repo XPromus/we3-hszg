@@ -8,6 +8,11 @@ Container Engine.Podman: {
     icon: ../Images/Icons/devicon--podman.svg
 }
 
+Frontend: {
+    icon: ../Images/Icons/devicon--svelte.svg
+}
+
+direction: down
 Database: {
     icon: ../Images/Icons/devicon--postgresql.svg
 }
@@ -19,12 +24,10 @@ Backend: {
     }
 }
 
-Frontend: {
-    icon: ../Images/Icons/devicon--svelte.svg
-}
-
 Database -> Backend: Lesen
 Backend -> Database: Schreiben
+
+direction: right
 Backend <-> Frontend: Interaktion über REST Schnittstellen
 
 Container Engine -- Database: Container
