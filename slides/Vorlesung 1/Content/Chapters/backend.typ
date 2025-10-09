@@ -21,23 +21,79 @@
   - Enthält REST-Endpunkte mit Mappings für HTTP-Funktionen
 ]
 
+#let repository-text = [
+  *Repositories* \
+  #v(25pt)
+  Ermöglichen Lesen und Schreiben auf die Datenbank. \
+  Sie stellen eine Menge an Methoden dafür bereit, je nachdem, welches Repository gewählt wird.
+]
+
+#let services-text = [
+  *Services* \
+  _mit DTOs und Mappern_
+  #v(25pt)
+  Verarbeitung von Daten und allgemeine Logik der Anwendung
+]
+
+#let controller-text = [
+  *Controller* \
+  #v(25pt)
+  Erstellung der API-Endpunkte über Mappings
+]
+
 #slide[
   = Bestandteile
   #set align(center)
   #v(75pt)
   #toolbox.side-by-side[
-    *Repositories* \
-    #v(25pt)
-    Lesen und Schreiben auf die Datenbank
+    #repository-text
   ][
-    *Services* \
-    _mit DTOs und Mappern_
-    #v(25pt)
-    Verarbeitung von Daten und allgemeine Logik der Anwendung
+    #text(fill: gray.lighten(80%))[
+      #services-text
+    ]
   ][
-    *Controller* \
-    #v(25pt)
-    Erstellung der API-Endpunkte über Mappings
+    #text(fill:gray.lighten(80%))[
+      #controller-text
+    ]
+  ]
+]
+
+// #slide[
+//   = Repository
+//   #set align(horizon + center)
+//   ```kotlin
+//   @Repository
+//   interface AccountRepository : JpaRepository<Account, Long> {
+    
+//   }
+//   ```
+// ]
+
+#slide[
+  = Bestandteile
+  #set align(center)
+  #v(75pt)
+  #toolbox.side-by-side[
+    #repository-text
+  ][
+    #services-text
+  ][
+    #text(fill:gray.lighten(80%))[
+      #controller-text
+    ]
+  ]
+]
+
+#slide[
+  = Bestandteile
+  #set align(center)
+  #v(75pt)
+  #toolbox.side-by-side[
+    #repository-text
+  ][
+    #services-text
+  ][
+    #controller-text
   ]
 ]
 

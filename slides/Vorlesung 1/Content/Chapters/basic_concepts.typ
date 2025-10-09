@@ -1,4 +1,5 @@
 #import "../../Template/definitions.typ": *
+#import "../../Components/dto-mapper-diagram.typ": dto-mapper-diagram
 
 #slide[
   #toolbox.register-section[Grundbegriffe]
@@ -37,6 +38,16 @@
   - *Model*: Verwaltet Daten und Business-Logik
   - *View*: Übernimmt Layout und Darstellung
   - *Controller*: Leitet Befehle zum Model und View weiter
+]
+
+#slide[
+  = Grundbegriffe
+  #v(10pt)
+  *DTO* - Data-Transfer-Object
+  - Bündelung von Datenfeldern in einem Objekt
+  - Einfachere Serialisierung und weniger Daten die verschickt werden müssen
+  #set align(horizon + center)
+  #dto-mapper-diagram
 ]
 
 #slide[

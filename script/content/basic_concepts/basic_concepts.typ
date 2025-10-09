@@ -25,6 +25,13 @@ APIs und andere Funktionen können dem Oberbegriff der Middleware zugeordnet wer
 #include "http.typ"
 #pagebreak()
 
+== DTO <dto>
+#text(weight: "bold")[D]ata-#text(weight: "bold")[T]ransfer-#text(weight: "bold")[O]bject bündelt mehrere Datenfelder in einem Objekt, damit sie in einem Aufruf übertragen werden können. 
+Da alle Daten in einem Objekt vorhanden sind, gibt es bei der Serialisierung auch nur einen Punkt, an dem die Daten umgewandelt werden was spätere Änderungen stark vereinfacht. 
+Zu guter Letzt tragen sie auch zur Teilung von den Domain Models und der Darstellungs Schicht bei, damit beide unabhängig sich ändern können.
+
+
+
 == MVC <mvc>
 #text(weight: "bold")[M]odel-#text(weight: "bold")[V]iew-#text(weight: "bold")[C]ontroller ist eine Design Pattern, welches genutzt wird um User Interfaces, Daten und Kontroll Logik zu implementieren.
 Ein großer Fokus ist dabei die Separierung von der Business Logik und der visuellen Darstellung.

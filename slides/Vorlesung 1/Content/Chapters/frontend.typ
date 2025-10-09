@@ -24,6 +24,12 @@
 ]
 
 #slide[
+  =
+  #set align(horizon + center)
+  #image("../../Images/javascript-framework-meme.jpg", fit: "contain", width: 100%)
+]
+
+#slide[
   = Frameworks
   #set align(horizon + center)
   #let icon-width = 100pt
