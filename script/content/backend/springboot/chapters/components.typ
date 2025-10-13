@@ -1,64 +1,29 @@
 #import "../../../../template/definitions.typ": *
 
 === Komponenten einer Spring Anwendung
-==== Controller
-```kotlin
-@RestController
-@RequestMapping("/path/to/controller")
-class Controller @Autowired constructor(
-  private val service: Service
-) {
-  @GetMapping
-  @ReponseStatus(HttpStatus.OK)
-  fun getEntities(): List<GetEntityDto> {
+Beispielkomponenten Anhand eines Users. 
+Dieser User hat folgende Felder:
+- Name
+- Alter
 
-  }
-}
-```
+#include "components/components_diagram.typ"
 
-==== Entity
-```kotlin
-@Entity(name = "entityName")
-@Table(name = "entityName")
-class Entity {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  val id: Long? = null,
-  // ...
-}
-```
+#include "components/controller.typ"
+#pagebreak()
 
-==== Dto
-```kotlin
-data class EntityDto (
-  // data
-)
-```
+#include "components/service.typ"
+#pagebreak()
 
-==== Mapper
-```kotlin
-fun convertEntityDtoToEntity(entityDto: EntityDto): Entity {
-  // convert
-}
-```
+#include "components/entity.typ"
+#pagebreak()
 
-==== Repository
-```kotlin
-@Repository
-interface EntityReposirory: JpaRepository<Entity, Long> {
+#include "components/repository.typ"
+#pagebreak()
 
-}
-```
-===== Repository Queries
+#include "components/dto.typ"
+#pagebreak()
 
-==== Serivce
-```kotlin
-@Service
-class EntityService @Autowired constructor(
-  private val entityReposirory: EntityReposirory
-) {
-  // service functions
-}
-```
+#include "components/mapper.typ"
+#pagebreak()
 
-=== Application YML
+#include "components/application_config.typ"

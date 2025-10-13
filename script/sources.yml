@@ -137,3 +137,23 @@ codecademyCRUD:
   type: Web
   title: What is CRUD? Explained
   url: https://www.codecademy.com/article/what-is-crud-explained
+
+springMappingRequests:
+  type: Web
+  title: Mapping Requests
+  url: https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-requestmapping.html
+
+springControllersUriPatterns:
+  type: Web
+  title: URI Patterns
+  url: https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-requestmapping.html#mvc-ann-requestmapping-uri-templates
+
+springRestErrorHandling:
+  type: Web
+  title: Error Handling for REST with Spring in Kotlin
+  url: https://www.baeldung.com/kotlin/spring-rest-error-handling
+
+springControllerAdvice:
+  type: Web
+  title: Controller Advice
+  url: https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-advice.html

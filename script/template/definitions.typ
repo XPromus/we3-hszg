@@ -5,7 +5,7 @@
 
 #import "@preview/frame-it:1.2.0": *
 #let (notice, definition, guideline) = frames(
-  notice: ("Wichtig", red),
+  notice: ("Hinweis", red),
   definition: ("Definition"),
   guideline: ("Richtlinie"),
 )

@@ -2,6 +2,9 @@
 
 == Spring
 
+#include "chapters/components.typ"
+#pagebreak()
+
 #include "chapters/spring_data/spring_data.typ"
 #pagebreak()
 
@@ -24,9 +27,6 @@
 #pagebreak()
 
 #include "chapters/open_api.typ"
-#pagebreak()
-
-#include "chapters/components.typ"
 #pagebreak()
 
 #include "chapters/authentication.typ"
