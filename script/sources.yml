@@ -157,3 +157,13 @@ springControllerAdvice:
   type: Web
   title: Controller Advice
   url: https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-advice.html
+
+transactions101:
+  type: Web
+  title: "Transactions 101: when and how to use them in the Spring Framework"
+  url: https://www.twoday.lt/blog/transactions-101-when-and-how-to-use-them-in-the-spring-framework
+
+whenToUseTransactionalStackOverflow:
+  type: Web
+  title: When should we use @Transactional annotation?
+  url: https://stackoverflow.com/questions/78132448/when-should-we-use-transactional-annotation
