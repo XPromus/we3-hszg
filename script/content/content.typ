@@ -22,4 +22,7 @@
 #include "devops/devops.typ"
 #pagebreak()
 
+#include "tools/tools.typ"
+#pagebreak()
+
 #include "debugging/debugging.typ"

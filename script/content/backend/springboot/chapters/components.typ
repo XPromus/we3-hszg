@@ -6,7 +6,8 @@ Dieser User hat folgende Felder:
 - Name
 - Alter
 
-#include "components/components_diagram.typ"
+// #include "components/components_diagram.typ"
+// #pagebreak()
 
 #include "components/controller.typ"
 #pagebreak()
