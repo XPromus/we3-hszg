@@ -34,7 +34,7 @@ Außerdem kann auch ein Schema Name angegeben werden.
 @Table(name="STUDENT", schema="SCHOOL")
 ```
 
-====== `@Id` Annotation
+===== `@Id` Annotation
 Jede Entity muss einen Primary Key besitzen. 
 Wenn ein Datenfeld mit `@Id` annotated wurde, ist es der Primary Key. 
 Die Id wird automatisch generiert. 
@@ -154,16 +154,117 @@ class Address (
 ```
 
 ====== `@ManyToMany`
-*TODO* @springManyToMany \
-Einfache Implementation von `@ManyToMany`:
+
+#figure(
+  caption: [Aufbau einer Many to Many Relation mit einem Join Table]
+)[
+  #let default-corner-radius = 2pt
+  #diagram(
+    node-stroke: 2pt,
+    node-inset: 10pt,
+    node(
+      (0, 0),
+      name: <Student>,
+      fill: gray.lighten(90%),
+      stroke: gray,
+      corner-radius: default-corner-radius,
+    )[
+      #table(
+        rows: (auto, auto),
+        inset: 5pt,
+        [student],
+        [
+          #table(
+            columns: (auto, auto),
+            inset: 5pt,
+            [public_key], [id]
+          )
+        ]
+      )
+    ],
+    edge("--", <Likes>),
+    node(
+      (0, 1),
+      name: <Likes>,
+      fill: gray.lighten(90%),
+      stroke: gray,
+      corner-radius: default-corner-radius,
+    )[
+      *Join Table*
+      #table(
+        rows: (auto, auto),
+        inset: 5pt,
+        [course_like],
+        [
+          #table(
+            columns: (auto, auto),
+            inset: 5pt,
+            [public_key, foreign_key 1], [student_id],
+            [public_key, foreign_key 2], [course_id]
+          )
+        ]
+      )
+    ],
+    edge("--", <Course>),
+    node(
+      (0, 2),
+      name: <Course>,
+      fill: gray.lighten(90%),
+      stroke: gray,
+      corner-radius: default-corner-radius,
+    )[
+      #table(
+        rows: (auto, auto),
+        inset: 5pt,
+        [course],
+        [
+          #table(
+            columns: (auto, auto),
+            inset: 5pt,
+            [public_key], [id]
+          )
+        ]
+      )
+    ],
+  )
+]<manyToManyRelation>
+
+
+
+Für Many to many Beziehungen muss ein neuer Table angelegt werden, die Beziehungen speichert. 
+In diesem Table werden Einträge gespeichert, die Foreign Keys zu den jeweiligen Entitäten enthalten. 
+Somit wird für jeden Eintrag in der many to many Beziehung ein Eintrag in dieser Tabelle angelegt. 
+Dieser daraus entstehende Table wird Join Table genannt. \
+
+In Spring wird diese Relation mit der `@ManyToMany` Annotation erstellt. 
+Beide Seiten in der Beziehung erlaten diese Annotation. 
+Auf der besitzenden Seite der Beziehung muss auch noch konfiguriert werden, wie das verbinden der Tabellen ablaufen soll. 
+Diese Konfiguration geschieht mit der `@JoinTable` Annotation durchgeführt. \
+
+`@JoinTable` benötigt einen Namen, der für den Join Table genutzt werden soll. 
+In dem `joinColumns` Feld wird die Verbindung zu der besitzenden Seite eingetragen mit `@JoinColumn` mit dem Namen der id. 
+Zuletzt wird mit einem `inverseJoinColumns` die andere Seite der Relation mit einem `@JoinColumn` verbunden. 
+Auch hier wird der Name der id benötigt. \
+
+Die Benutzung von `@JoinColumn` und `@JoinTable` ist dabei nicht zwingend notwending. 
+JPA ist in der Lage die Verbindung selbst herzustellen. 
+Allerdings kann die dabei genutzte Strategie nicht immer die sein, die wir uns erwünschen, vor allem wenn unsere Namenskonventionen von denen in JPA definierten abweichen. \
+
+Auf der Zielseite muss nur der Name des Feldes angeben werden, der die Relation mapped. @springManyToMany
+
 ```kotlin
 class Student (
   @ManyToMany
-  val courses: List<Course>
+  @JoinTable(
+    name = "course_like", 
+    joinColumns = @JoinColumn(name = "student_id"), 
+    inverseJoinColumns = @JoinColumn(name = "course_id")
+  )
+  val likedCourses: List<Course>
 )
 
 class Course (
-  @ManyToMany
-  val students: List<Students>
+  @ManyToMany(mappedBy = "likedCourses")
+  val likes: List<Students>
 )
 ```

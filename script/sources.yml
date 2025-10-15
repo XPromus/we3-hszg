@@ -192,3 +192,8 @@ springManyToMany:
   type: Web
   title: Many-To-Many Relationship in JPA
   url: https://www.baeldung.com/jpa-many-to-many
+
+springDataJpaIntroduction:
+  type: Web
+  title: Introduction to Spring Data JPA
+  url: https://www.baeldung.com/the-persistence-layer-with-spring-data-jpa
