@@ -3,8 +3,10 @@
 #slide[
   = Agenda
   #set align(horizon)
-  - Spring
-  - REST Controller
-  - Services
-  - JPA Repositorys
+  - Spring Komponenten
+  - HTTP Methoden
+  - Controller
+  - Service
+  - Entity
+  - Repository
 ]

@@ -167,3 +167,28 @@ whenToUseTransactionalStackOverflow:
   type: Web
   title: When should we use @Transactional annotation?
   url: https://stackoverflow.com/questions/78132448/when-should-we-use-transactional-annotation
+
+springJpaEntites:
+  type: Web
+  title: Defining JPA Entities
+  url: https://www.baeldung.com/jpa-entities
+
+springHibernateOneToMany:
+  type: Web
+  title: Hibernate One to Many
+  url: https://www.baeldung.com/hibernate-one-to-many
+
+mediumSpringOneToMany:
+  type: Web
+  title: Spring Boot One To Many Relationship
+  url: https://medium.com/@hk09/spring-boot-one-to-many-relationship-e617183b7861
+
+springOneToOne:
+  type: Web
+  title: One-to-One Relationship in JPA
+  url: https://www.baeldung.com/jpa-one-to-one
+
+springManyToMany:
+  type: Web
+  title: Many-To-Many Relationship in JPA
+  url: https://www.baeldung.com/jpa-many-to-many
