@@ -4,9 +4,9 @@
   = Agenda
   #set align(horizon)
   - Spring Komponenten
-  - HTTP Methoden
-  - Controller
-  - Service
   - Entity
   - Repository
+  - Controller
+  - HTTP Methoden
+  - Service
 ]
