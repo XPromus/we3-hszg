@@ -1,7 +1,7 @@
 #import "../../template/definitions.typ": *
 #import "../../Components/chapter_titile_slide.typ": chapter-title-slide
 
-#chapter-title-slide([DTO], [DTO])
+#chapter-title-slide([DTOs], [DTOs])
 
 #slide[
   = DTO

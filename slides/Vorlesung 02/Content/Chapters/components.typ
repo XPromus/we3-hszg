@@ -1,27 +1,35 @@
 #import "../../template/definitions.typ": *
 
 #let get-diagram(
-  step
+  step: int
 ) = [
   #let repositoryX = 0
   #let serviceX = 1.5
   #let controllerX = 4
   #let default-corner-radius = 2pt
 
-  #let default-color = blue
+  #let inactive-color = gray.lighten(60%)
+  #let default-color = black
   #let default-text-color = black
+  #let inactive-text-color = gray.lighten(60%)
   #let active-color = red
 
-  #let get-stroke-color(active-step, target-step) = {
-    if (active-step == target-step) {
+  #let get-stroke-color(target-step: int) = {
+    if (step == target-step) {
       return active-color
+    }
+    if (step < target-step) {
+      return inactive-color
     }
     return default-color
   }
 
-  #let get-text-color(active-step, target-step) = {
-    if (active-step == target-step) {
+  #let get-text-color(target-step: int) = {
+    if (step == target-step) {
       return active-color
+    }
+    if (step < target-step) {
+      return inactive-text-color
     }
     return default-text-color
   }
@@ -84,34 +92,34 @@
       Controller
     ],
 
-    edge(<Controller>, "-|>", <Service>, shift: 3pt, stroke: get-stroke-color(step, 1), bend: 10deg)[
-      #text(fill: get-text-color(step, 1))[Parameter für GET]
+    edge(<Controller>, "-|>", <Service>, shift: 3pt, stroke: get-stroke-color(target-step: 1), bend: 10deg)[
+      #text(fill: get-text-color(target-step: 1))[Parameter für GET]
     ],
-    edge(<Service>, "-|>", <Repository>, stroke: get-stroke-color(step, 2))[
-      #text(fill: get-text-color(step, 2))[
+    edge(<Service>, "-|>", <Repository>, stroke: get-stroke-color(target-step: 2))[
+      #text(fill: get-text-color(target-step: 2))[
         #set align(center)
         Anfrage an \ das Repository
       ]
     ],
-    edge(<Repository>, "-|>", <Entity>, stroke: get-stroke-color(step, 3))[
-      #text(fill: get-text-color(step, 3))[Gefundene \ Entities]
+    edge(<Repository>, "-|>", <Entity>, stroke: get-stroke-color(target-step: 3))[
+      #text(fill: get-text-color(target-step: 3))[Gefundene \ Entities]
     ],
-    edge(<Entity>, "-|>", <Service>, stroke: get-stroke-color(step, 4), bend: 40deg),
-    edge(<Service>, "-|>", <GetEntityDtoMapper>, stroke: get-stroke-color(step, 5), label-side: right)[
-      #text(fill: get-text-color(step, 5))[
+    edge(<Entity>, "-|>", <Service>, stroke: get-stroke-color(target-step: 4), bend: 40deg),
+    edge(<Service>, "-|>", <GetEntityDtoMapper>, stroke: get-stroke-color(target-step: 5), label-side: right)[
+      #text(fill: get-text-color(target-step: 5))[
         #set align(center)
         Aufruf des \ Mappings von \ Entities zu GET DTOs
       ]
     ],
-    edge(<GetEntityDtoMapper>, "-|>", <GetEntityDto>, stroke: get-stroke-color(step, 6), label-side: right)[
-      #text(fill: get-text-color(step, 6))[Mapping der DTOs]
+    edge(<GetEntityDtoMapper>, "-|>", <GetEntityDto>, stroke: get-stroke-color(target-step: 6), label-side: right)[
+      #text(fill: get-text-color(target-step: 6))[Mapping der DTOs]
       
     ],
-    edge(<GetEntityDto>, "-|>", <Service>, stroke: get-stroke-color(step, 7), bend: -65deg)[
-      #text(fill: get-text-color(step, 7))[Fertige DTOs]
+    edge(<GetEntityDto>, "-|>", <Service>, stroke: get-stroke-color(target-step: 7), bend: -65deg)[
+      #text(fill: get-text-color(target-step: 7))[Fertige DTOs]
     ],
-    edge(<Service>, "-|>", <Controller>, shift: 3pt, stroke: get-stroke-color(step, 8), bend: 10deg)[
-      #text(fill: get-text-color(step, 8))[Get DTOs]
+    edge(<Service>, "-|>", <Controller>, shift: 3pt, stroke: get-stroke-color(target-step: 8), bend: 10deg)[
+      #text(fill: get-text-color(target-step: 8))[Get DTOs]
     ],
   )
 ]
@@ -129,20 +137,36 @@
     #slide[
       =
       #set align(horizon + center)
-      #get-diagram(index)
+      #get-diagram(step: index)
     ]
   ]
   index = index + 1
 }
 
+#let componentsIndex = 0
+#let components = (
+  "Entities",
+  "Repositories",
+  "Controllers",
+  "Services",
+  "DTOs",
+  "Mapper"
+)
 #slide[
   #toolbox.register-section([Komponenten])
   = Komponenten
   #set align(horizon)
-  - Controller: 
-  - Service
-  - Repository
-  - Entity
-  - DTOs
-  - Mapper
+
+  #for c in components [
+    #block(
+      fill: gray.lighten(90%), 
+      stroke: stroke(paint: gray, thickness: 2.5pt), 
+      width: 100%, 
+      inset: 10pt,
+      radius: 5pt,
+    )[
+      #set align(center)
+      #text(weight: "bold")[#c]
+    ]
+  ]
 ]
