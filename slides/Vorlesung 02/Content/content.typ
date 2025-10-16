@@ -3,7 +3,7 @@
 #include "agenda.typ"
 
 #slide[
-    =
+    = Letzte Woche
     #set align(center + horizon)
     #import "../Components/structure_diagram.typ": structure-diagram
     #structure-diagram(false, false, false, false)
