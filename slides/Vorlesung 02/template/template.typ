@@ -1,6 +1,6 @@
 #import "@preview/polylux:0.4.0": *
+#import "colors.typ": hszg-green
 
-#let hszg-green = rgb("#88BD21")
 #let footer-font-size = 13pt
 
 #let sections-band = toolbox.all-sections( (sections, current) => {

@@ -1,7 +1,7 @@
 #import "../../template/definitions.typ": *
-#import "../../Components/chapter_titile_slide.typ": chapter-title-slide
+#import "../../Components/chapter_title_slide.typ": chapter-title-slide
 
-#chapter-title-slide([Services], [Services])
+#chapter-title-slide(active-component: 3)
 
 #slide[
   = Service

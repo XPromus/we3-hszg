@@ -1,7 +1,7 @@
 #import "../../template/definitions.typ": *
-#import "../../Components/chapter_titile_slide.typ": chapter-title-slide
+#import "../../Components/chapter_title_slide.typ": chapter-title-slide
 
-#chapter-title-slide([Mapper], [Mapper])
+#chapter-title-slide(active-component: 5)
 
 #slide[
   = Mapper

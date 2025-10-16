@@ -1,0 +1,1 @@
+#let hszg-green = rgb("#88BD21")
