@@ -1,4 +1,20 @@
+#import "../template/definitions.typ": *
+
 #include "agenda.typ"
+
+#slide[
+    =
+    #set align(center + horizon)
+    #import "../Components/structure_diagram.typ": structure-diagram
+    #structure-diagram(false, false, false, false)
+]
+
+#slide[
+    =
+    #set align(center + horizon)
+    #import "../Components/structure_diagram.typ": structure-diagram
+    #structure-diagram(false, true, false, false)
+]
 
 #include "Chapters/components.typ"
 
@@ -8,6 +24,8 @@
 
 #include "Chapters/controller.typ"
 
-#include "Chapters/http.typ"
-
 #include "Chapters/service.typ"
+
+#include "Chapters/dto.typ"
+
+#include "Chapters/mapper.typ"

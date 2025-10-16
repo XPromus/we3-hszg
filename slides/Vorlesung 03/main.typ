@@ -1,11 +1,24 @@
-#import "@preview/polylux:0.4.0": *
+#import "Template/definitions.typ": *
+#import "Template/template.typ": *
 
-#set page(paper: "presentation-16-9")
-#set text(size: 25pt, font: "Lato")
+#show: frame-style(styles.boxy)
+
+#show: codly-init.with()
+#codly(languages: codly-languages)
+
+#title-slide(
+  group: [Hochschule Zittau/Görlitz],
+  title: [Web Engineering 3],
+  subtitle: [Vorlesung 3],
+  extra: [Christopher-Manuel Hilgner]
+)
+
+#show: setup
+
+#include "Content/content.typ"
 
 #slide[
-  #set align(horizon)
-  = Web Engineering 3
-  Christopher-Manuel Hilgner
-  24.10.2025
+  =
+  #set align(horizon + center)
+  #image("Images/mio-mensa-im-osten.png", width: 100%)
 ]

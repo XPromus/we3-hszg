@@ -1,4 +1,4 @@
-#import "../../template/definitions.typ": *
+#import "../../Template/definitions.typ": *
 
 #slide[
   #toolbox.register-section([Dependency Injection])

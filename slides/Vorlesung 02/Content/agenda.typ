@@ -7,6 +7,7 @@
   - Entity
   - Repository
   - Controller
-  - HTTP Methoden
   - Service
+  - DTO
+  - Mapper
 ]

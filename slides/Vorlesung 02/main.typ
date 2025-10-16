@@ -1,6 +1,8 @@
 #import "template/definitions.typ": *
 #import "template/template.typ": *
 
+#show: frame-style(styles.boxy)
+
 #show: codly-init.with()
 #codly(languages: codly-languages)
 
@@ -14,3 +16,9 @@
 #show: setup
 
 #include "Content/content.typ"
+
+#slide[
+  =
+  #set align(horizon + center)
+  #image("Images/mio-mensa-im-osten.png", width: 100%)
+]
