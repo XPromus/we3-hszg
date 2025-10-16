@@ -9,7 +9,7 @@
   ```kotlin
     @RestController
     @RequestMapping("/path/to/controller")
-    class Controller @Autowired constructor(
+    class Controller(
       private val service: Service
     ) {
       @GetMapping

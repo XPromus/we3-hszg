@@ -22,6 +22,59 @@
 ]
 
 #slide[
+  = Service Funktionen
+  #set align(horizon + center)
+  ```kotlin
+    @RestController
+    @RequestMapping("/path/to/controller")
+    class Controller(
+      private val entityService: EntityService
+    ) {
+      @GetMapping
+      @ReponseStatus(HttpStatus.OK)
+      fun getEntities(
+        @RequestParam(required = false) id: Long?, 
+        @RequestParam(required = false) name: String?
+      ): List<GetEntityDto> {
+        return entityService.getEntities(id, name);
+      }
+    }
+  ```
+]
+
+#slide[
+  = Service Funktionen
+  #set align(horizon + center)
+  ```kotlin
+  @Service
+  class EntityService (
+    private val entityRepository: EntityRepository
+  ) {
+    fun getEntities(id: Long?, name: String?): List<Entity> {
+      var entities = entityReposirory
+        .getEntitiesByFields(id, name)
+        .map{
+          toGetEntityDto(it);
+        };
+      return entities;
+    }
+  }
+  ```
+]
+
+#slide[
+  = Transactional Methoden
+  #set align(horizon + center)
+  ```kotlin
+    @Transactional
+    fun deleteUser(id: Long) {
+      val toDeleteUser = getUserById(id)
+      userRepository.delete(toDeleteUser)
+    }
+  ```
+]
+
+#slide[
   = Transactional Methoden
   #set align(horizon + center)
   ```kotlin
@@ -37,18 +90,6 @@
       )
       val roles: List<Role> = emptyList()
     )
-  ```
-]
-
-#slide[
-  = Transactional Methoden
-  #set align(horizon + center)
-  ```kotlin
-    @Transactional
-    fun deleteUser(id: Long) {
-      val toDeleteUser = getUserById(id)
-      userRepository.delete(toDeleteUser)
-    }
   ```
 ]
 
