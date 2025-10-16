@@ -15,9 +15,7 @@ Erstelle eine REST API zu diesen Anforderungen.
 Implementiere dazu:
 1. Entity
 2. Repository
-3. Service
-4. Controller mit *GET*, *POST*, *PUT* und *DELETE* Methoden
+3. Controller mit *GET*, *POST*, *PUT* und *DELETE* Methoden
+4. Service
 
-Überprüfe die Funktionalität über die Swagger UI vom Backend. \
-
-Wer fertig ist kann ins Wochenende :D
+Überprüfe die Funktionalität über die Swagger UI vom Backend.
