@@ -301,3 +301,18 @@ jpaSorting:
   type: Web
   title: Using Sort
   url: https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html#jpa.query-methods.sorting
+
+springUnitTesting:
+  type: Web
+  title: Unit Testing
+  url: https://docs.spring.io/spring-framework/reference/testing/unit.html
+
+backendUnitTestsKotlinSpringboot:
+  type: Web
+  title: Backend Unit Test with Kotlin and Spring Boot (JUnit&Mockk)
+  url: https://medium.com/yildiztech/backend-unit-test-with-kotlin-and-spring-boot-junit-mockk-5563e2d133ca
+
+mockkExample:
+  type: Web
+  title: Mockk Getting Started
+  url: https://mockk.io/?source=post_page-----5563e2d133ca---------------------------------------

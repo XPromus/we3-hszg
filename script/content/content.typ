@@ -34,4 +34,7 @@
 #include "tools/tools.typ"
 #pagebreak()
 
+#include "tests/tests.typ"
+#pagebreak()
+
 #include "debugging/debugging.typ"
