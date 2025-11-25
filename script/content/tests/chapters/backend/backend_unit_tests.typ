@@ -189,3 +189,73 @@ verify { car.drive(Direction.NORTH) }
 
 confirmVerified(car)
 ```
+
+== JUnit5 <junit5>
+JUnit5 wird in Spring Boot direkt mitgeliefert. 
+Es bringt einige Features mit, die für die Entwicklung mit Kotlin sehr hilfreich sind. 
+Zum Beispiel: Autowiring von Contructor und Method Parametern. 
+Dadurch können non-nullable `val` Variablen und `@BeforeAll` und `@AfterAll` genutzt werden. \
+
+Beispiel eines Integrations Tests: \
+```kotlin
+@SpringBootTest(
+    webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
+)
+class IntegrationTests(
+    @Autowired val restTemplate: TestRestTemplate
+) {
+  @Test
+  fun `Assert blog page title, content and status code`() {
+    val entity = restTemplate.getForEntity<String>("/")
+    assertThat(entity.statusCode).isEqualTo(HttpStatus.OK)
+    assertThat(entity.body).contains("<h1>Blog</h1>")
+  }
+}
+```
+
+Folgende Konzepte sind hier wichtig:
+- Es werden volle Sätze als Funktionsnamen benutzt
+- JUnit 5 erlaubt es Konstruktor und Methoden Parameter zu injecten
+- Im Beispiel hier wird `getForObject` und `getForEntity` genutzt, die separat importiert werden müssen.
+
+=== Lifecycle <junit5_lifecycle>
+Manche Methoden sollen vor oder nach allen Tests ausgeführt werden. 
+Wenn man in der `src/test/resources/junit-platform.properties` folgende Änderung durchführt:
+
+```properties
+junit.jupiter.testinstance.lifecycle.default = per_class
+```
+
+kann man die `@BeforeAll` und `@AfterAll` Annotationen an normalen Methoden benutzen.
+
+```kotlin
+@SpringBootTest(
+    webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
+)
+class IntegrationTests(
+    @Autowired val restTemplate: TestRestTemplate
+) {
+  @BeforeAll
+  fun setup() {
+    println(">> Setup")
+  }
+
+  @Test
+  fun `Assert blog page title, content and status code`() {
+    println(">> Assert blog page title, content and status code")
+    val entity = restTemplate.getForEntity<String>("/")
+    assertThat(entity.statusCode).isEqualTo(HttpStatus.OK)
+    assertThat(entity.body).contains("<h1>Blog</h1>")
+  }
+
+  @Test
+  fun `Assert article page title, content and status code`() {
+    println(">> TODO")
+  }
+
+  @AfterAll
+  fun teardown() {
+    println(">> Tear down")
+  }
+}
+```
