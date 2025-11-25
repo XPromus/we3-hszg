@@ -39,23 +39,7 @@ class TodoItemIntegrationTest {
     @Test
     fun `post todoItems returns success`() {
         val newUserGetDto: GetUserDto = createNewUser()
-
-        val newTodoItem = CreateTodoItemDto(
-            name = "Test Todo Name",
-            description = "Test Todo Description",
-            done = false,
-            created = Date(),
-            shouldBeDoneBy = Date(),
-            userId = newUserGetDto.id
-        )
-
-        mockMvc.post("/todos") {
-            contentType = MediaType.APPLICATION_JSON
-            content = mapper.writeValueAsString(newTodoItem)
-            accept = MediaType.APPLICATION_JSON
-        }.andExpect {
-            status { isCreated() }
-        }
+        val newTodoItem: GetTodoItemDto = createNewTodoItem(newUserGetDto.id)
     }
 
     @Test

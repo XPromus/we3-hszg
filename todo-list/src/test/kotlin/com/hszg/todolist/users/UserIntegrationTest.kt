@@ -80,39 +80,15 @@ class UserIntegrationTest {
 
     @Test
     fun `post users returns success`() {
-        val newUser = CreateUserDto(
-            username = "New User"
-        )
-
-        mockMvc.post("/users") {
-            contentType = MediaType.APPLICATION_JSON
-            content = jsonMapper().writeValueAsString(newUser)
-            accept = MediaType.APPLICATION_JSON
-        }.andExpect {
-            status { isCreated() }
-        }
+        createNewUser()
     }
 
     @Test
     fun `put users returns success`() {
-        val newUser = CreateUserDto(
-            username = "New User"
-        )
-
+        val newUserGetDto = createNewUser()
         val updatedUser = UpdateUserDto(
             username = "New User Updated"
         )
-
-        val postResult = mockMvc.post("/users") {
-            contentType = MediaType.APPLICATION_JSON
-            content = mapper.writeValueAsString(newUser)
-            accept = MediaType.APPLICATION_JSON
-        }.andExpect {
-            status { isCreated() }
-        }.andReturn()
-
-        val newUserAsString = postResult.response.contentAsString
-        val newUserGetDto: GetUserDto = mapper.readValue<GetUserDto>(newUserAsString)
 
         mockMvc.put("/users/${newUserGetDto.id}") {
             contentType = MediaType.APPLICATION_JSON
@@ -125,21 +101,7 @@ class UserIntegrationTest {
 
     @Test
     fun `delete users returns success`() {
-        val newUser = CreateUserDto(
-            username = "New User"
-        )
-
-        val postResult = mockMvc.post("/users") {
-            contentType = MediaType.APPLICATION_JSON
-            content = mapper.writeValueAsString(newUser)
-            accept = MediaType.APPLICATION_JSON
-        }.andExpect {
-            status { isCreated() }
-        }.andReturn()
-
-        val newUserAsString = postResult.response.contentAsString
-        val newUserGetDto: GetUserDto = mapper.readValue<GetUserDto>(newUserAsString)
-
+        val newUserGetDto = createNewUser()
         mockMvc.delete("/users/${newUserGetDto.id}")
             .andExpect {
                 status { isNoContent() }
