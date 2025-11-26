@@ -1,4 +1,5 @@
 #import "../../Template/definitions.typ": *
+#import "../../Template/template.typ": subchapter-title-slide
 #import "../../Components/chapter_titile_slide.typ": chapter-title-slide
 
 #chapter-title-slide(
@@ -47,6 +48,11 @@
   - Servlet API
   - Spring Web Reactive
 ]
+
+#chapter-title-slide(
+  section-name: [Mocking],
+  title-text: "Mocking"
+)
 
 #slide[
   = Mocking
@@ -140,6 +146,8 @@
 #let exampleMockkTitle = [
   Mockk Beispiel
 ]
+
+#subchapter-title-slide(section-name: exampleMockkTitle)
 
 #slide[
   = #exampleMockkTitle

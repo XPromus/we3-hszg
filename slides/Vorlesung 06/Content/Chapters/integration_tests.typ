@@ -20,7 +20,7 @@
 ]
 
 #let integrationTestExampleTitle = [
-  Integration Test Beispiel
+  Integrations-Test Beispiel
 ]
 #subchapter-title-slide(
   section-name: integrationTestExampleTitle
