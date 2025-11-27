@@ -8,8 +8,12 @@
 ]
 
 #chapter-title-slide(
-  section-name: customTemplateMessagesTitle
+  section-name: [Error Handling]
 )
+
+// #chapter-title-slide(
+//   section-name: customTemplateMessagesTitle
+// )
 
 #slide[
   = #customTemplateMessagesTitle
@@ -29,9 +33,9 @@
   Exception Controller Advice
 ]
 
-#chapter-title-slide(
-  section-name: exceptionControllerAdviceTitle
-)
+// #chapter-title-slide(
+//   section-name: exceptionControllerAdviceTitle
+// )
 
 #slide[
   = #customTemplateMessagesTitle
@@ -90,9 +94,9 @@
   Einbindung
 ]
 
-#chapter-title-slide(
-  section-name: implementingExceptionsTitle
-)
+// #chapter-title-slide(
+//   section-name: implementingExceptionsTitle
+// )
 
 #slide[
   = #implementingExceptionsTitle
@@ -139,9 +143,9 @@
   ResponseStatusException Class  
 ]
 
-#chapter-title-slide(
-  section-name: responseStatusExceptionTitle
-)
+// #chapter-title-slide(
+//   section-name: responseStatusExceptionTitle
+// )
 
 #slide[
   = #responseStatusExceptionTitle
