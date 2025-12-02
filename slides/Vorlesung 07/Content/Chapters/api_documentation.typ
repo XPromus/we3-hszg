@@ -364,3 +364,99 @@
     image("../../Images/books_api_response_full.png", fit: "contain", width: 65%)
   )
 ]
+
+#slide[
+  = Alternativen zu Swagger
+  #set align(horizon + center)
+  #grid(
+    columns: (1fr),
+    inset: 30pt,
+    [
+      #grid(
+        columns: (auto, auto),
+        inset: 10pt,
+        [
+          #image("../../Images/rapidoc.png", fit: "contain", width: 50pt)
+        ], 
+        [
+          #text(weight: "bold")[Rapidoc]
+        ]
+      )
+    ],
+    [
+      #image("../../Images/redocly.svg", fit: "contain", width: 150pt)
+    ],
+    [
+      #text()[*OpenAPI Explorer* by _Authress_]
+    ]
+  )
+  ...
+]
+
+//https://rapidocweb.com/
+#subchapter-title-slide(
+  section-name: "RapiDoc"
+)
+
+#slide[
+  = Rapidoc
+  #set align(horizon + center)
+  #figure(
+    image("../../Images/rapidoc_1.png", fit: "contain", width: 90%)
+  )
+]
+
+#slide[
+  = Rapidoc
+  #set align(horizon + center)
+  ```html
+  <!doctype html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <script type="module" src="https://unpkg.com/rapidoc/dist/rapidoc-min.js"></script>
+    </head>
+    <body>
+      <rapi-doc
+        spec-url = "https://petstore.swagger.io/v2/swagger.json"
+      > </rapi-doc>
+    </body>
+  </html>
+  ```
+]
+
+#slide[
+  = Rapidoc
+  == Wiki Rendering
+  #set align(horizon + center)
+  #figure(
+    image("../../Images/rapidoc_2.png", fit: "contain", width: 90%)
+  )
+]
+
+#slide[
+  = Rapidoc
+  == Objekt Darstellung
+  #set align(horizon + center)
+  #grid(
+    columns: (1fr, 1fr),
+    [
+      #image("../../Images/rapidoc_3_1.png", fit: "contain", height: 280pt)
+      Tabellarisch
+    ],
+    [
+      #image("../../Images/rapidoc_3_2.png", fit: "contain", height: 280pt)
+      Baumansicht
+    ]
+  )
+]
+
+// //https://redocly.com/
+// #subchapter-title-slide(
+//   section-name: "Redocly"
+// )
+
+// //https://github.com/Authress-Engineering/openapi-explorer
+// #subchapter-title-slide(
+//   section-name: "OpenAPI Explorer"
+// )
