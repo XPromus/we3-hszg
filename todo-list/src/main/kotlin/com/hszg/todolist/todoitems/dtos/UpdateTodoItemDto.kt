@@ -1,4 +1,4 @@
-package com.hszg.todolist.todoitem.dtos
+package com.hszg.todolist.todoitems.dtos
 
 import java.util.Date
 

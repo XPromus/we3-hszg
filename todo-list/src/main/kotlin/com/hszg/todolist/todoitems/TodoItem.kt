@@ -1,4 +1,4 @@
-package com.hszg.todolist.todoitem
+package com.hszg.todolist.todoitems
 
 import com.fasterxml.jackson.annotation.JsonBackReference
 import com.hszg.todolist.users.User

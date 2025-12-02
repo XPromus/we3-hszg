@@ -1,6 +1,6 @@
 package com.hszg.todolist.users
 
-import com.hszg.todolist.todoitem.TodoItem
+import com.hszg.todolist.todoitems.TodoItem
 import jakarta.persistence.CascadeType
 import jakarta.persistence.Column
 import jakarta.persistence.Entity

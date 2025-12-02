@@ -1,6 +1,5 @@
-package com.hszg.todolist.todoitem.dtos
+package com.hszg.todolist.todoitems.dtos
 
-import com.hszg.todolist.users.User
 import java.util.Date
 
 data class GetTodoItemDto(

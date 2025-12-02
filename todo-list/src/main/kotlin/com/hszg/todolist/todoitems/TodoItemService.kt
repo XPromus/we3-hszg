@@ -1,14 +1,13 @@
-package com.hszg.todolist.todoitem
+package com.hszg.todolist.todoitems
 
-import com.hszg.todolist.todoitem.dtos.CreateTodoItemDto
-import com.hszg.todolist.todoitem.dtos.GetTodoItemDto
-import com.hszg.todolist.todoitem.dtos.UpdateTodoItemDto
-import com.hszg.todolist.todoitem.mapper.fromCreateTodoItemDto
-import com.hszg.todolist.todoitem.mapper.fromEditTodoItemDto
-import com.hszg.todolist.todoitem.mapper.toGetTodoItemDto
-import com.hszg.todolist.users.UserRepository
+import com.hszg.todolist.todoitems.dtos.CreateTodoItemDto
+import com.hszg.todolist.todoitems.dtos.GetTodoItemDto
+import com.hszg.todolist.todoitems.dtos.UpdateTodoItemDto
+import com.hszg.todolist.todoitems.exceptions.TodoItemNotFoundException
+import com.hszg.todolist.todoitems.mapper.fromCreateTodoItemDto
+import com.hszg.todolist.todoitems.mapper.fromEditTodoItemDto
+import com.hszg.todolist.todoitems.mapper.toGetTodoItemDto
 import com.hszg.todolist.users.UserService
-import jakarta.persistence.EntityNotFoundException
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import java.util.Date
@@ -22,7 +21,7 @@ class TodoItemService (
         id: Long
     ): TodoItem {
         return todoItemRepository.findById(id).orElseThrow {
-            EntityNotFoundException(
+            TodoItemNotFoundException(
                 "Todo item with id $id could not be found."
             )
         }
@@ -69,7 +68,11 @@ class TodoItemService (
                 )
             )
             toGetTodoItemDto(save)
-        }.orElseGet(null)
+        }.orElseThrow{
+            TodoItemNotFoundException(
+                "Todo item with id $id could not be found."
+            )
+        }
     }
 
     @Transactional

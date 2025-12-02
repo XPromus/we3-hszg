@@ -1,7 +1,7 @@
-package com.hszg.todolist.todoitem.mapper
+package com.hszg.todolist.todoitems.mapper
 
-import com.hszg.todolist.todoitem.TodoItem
-import com.hszg.todolist.todoitem.dtos.CreateTodoItemDto
+import com.hszg.todolist.todoitems.TodoItem
+import com.hszg.todolist.todoitems.dtos.CreateTodoItemDto
 import com.hszg.todolist.users.User
 
 fun fromCreateTodoItemDto(

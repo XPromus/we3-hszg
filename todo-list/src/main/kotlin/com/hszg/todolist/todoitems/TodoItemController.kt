@@ -1,8 +1,8 @@
-package com.hszg.todolist.todoitem
+package com.hszg.todolist.todoitems
 
-import com.hszg.todolist.todoitem.dtos.CreateTodoItemDto
-import com.hszg.todolist.todoitem.dtos.GetTodoItemDto
-import com.hszg.todolist.todoitem.dtos.UpdateTodoItemDto
+import com.hszg.todolist.todoitems.dtos.CreateTodoItemDto
+import com.hszg.todolist.todoitems.dtos.GetTodoItemDto
+import com.hszg.todolist.todoitems.dtos.UpdateTodoItemDto
 import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.DeleteMapping

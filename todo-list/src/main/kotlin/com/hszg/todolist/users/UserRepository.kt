@@ -15,4 +15,6 @@ interface UserRepository : JpaRepository<User, Long> {
         id: Long?,
         username: String?
     ): MutableList<User>
+
+    fun findUserByUsernameIs(username: String): MutableList<User>
 }

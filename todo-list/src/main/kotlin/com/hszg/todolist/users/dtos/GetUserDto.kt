@@ -1,6 +1,6 @@
 package com.hszg.todolist.users.dtos
 
-import com.hszg.todolist.todoitem.TodoItem
+import com.hszg.todolist.todoitems.TodoItem
 
 data class GetUserDto(
     val id: Long,

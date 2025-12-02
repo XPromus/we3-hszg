@@ -2,9 +2,9 @@ package com.hszg.todolist.todoitems
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
-import com.hszg.todolist.todoitem.dtos.CreateTodoItemDto
-import com.hszg.todolist.todoitem.dtos.GetTodoItemDto
-import com.hszg.todolist.todoitem.dtos.UpdateTodoItemDto
+import com.hszg.todolist.todoitems.dtos.CreateTodoItemDto
+import com.hszg.todolist.todoitems.dtos.GetTodoItemDto
+import com.hszg.todolist.todoitems.dtos.UpdateTodoItemDto
 import com.hszg.todolist.users.dtos.CreateUserDto
 import com.hszg.todolist.users.dtos.GetUserDto
 import org.springframework.beans.factory.annotation.Autowired
