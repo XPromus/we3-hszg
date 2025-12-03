@@ -30,13 +30,6 @@ class TodoItemController (
     val todoItemService: TodoItemService
 ) {
 
-    @Tag(
-        name = "getTodoItems",
-        description = "Get a List of todo items according to provided parameters."
-    )
-    @Tag(
-        name = "GET Methods"
-    )
     @Operation(
         summary = "Get a List of todo items according to provided parameters."
     )
@@ -55,9 +48,8 @@ class TodoItemController (
         )
     }
 
-    @Tag(
-        name = "createTodoItem",
-        description = "Create a new todo item according to the CreateTodoItemDto."
+    @Operation(
+        summary = "Create a new todo item according to the CreateTodoItemDto."
     )
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -67,9 +59,8 @@ class TodoItemController (
         return todoItemService.createTodoItem(createTodoItemDto)
     }
 
-    @Tag(
-        name = "updateTodoItem",
-        description = "Update an existing todo item according to the UpdateTodoItemDto. " +
+    @Operation(
+        summary = "Update an existing todo item according to the UpdateTodoItemDto. " +
                 "The todo item is chosen by a provided id in the url. " +
                 "If the todo item doesn't exist, this operation will fail."
     )
@@ -89,9 +80,8 @@ class TodoItemController (
 
     }
 
-    @Tag(
-        name = "deleteTodoItem",
-        description = "An existing todo item will be deleted. " +
+    @Operation(
+        summary = "An existing todo item will be deleted. " +
                 "The todo item to be deleted is chosen by the provided id. " +
                 "If the todo item doesn't exist, this operation will fail."
     )

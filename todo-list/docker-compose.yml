@@ -1,7 +1,7 @@
 services:
   todo_list_backend:
     build:
-      context: .
+      context: ./backend
       dockerfile: ./Dockerfile
       args:
         APP_VERSION: "0.0.1-SNAPSHOT"

@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="639cb431-705f-4672-8231-051e0fdb0fac" name="Changes" comment="Some integration tests">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/backend/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/backend/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/backend/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/TodoListApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/TodoListApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/errors/ErrorMessageModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/errors/ErrorMessageModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/errors/ExceptionControllerAdvice.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/errors/ExceptionControllerAdvice.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/todoitems/TodoItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/todoitems/TodoItem.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/todoitems/TodoItemController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/todoitems/TodoItemController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/todoitems/TodoItemRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/todoitems/TodoItemRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/todoitems/TodoItemService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/todoitems/TodoItemService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/todoitems/dtos/CreateTodoItemDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/todoitems/dtos/CreateTodoItemDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/todoitems/dtos/GetTodoItemDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/todoitems/dtos/GetTodoItemDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/todoitems/dtos/UpdateTodoItemDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/todoitems/dtos/UpdateTodoItemDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/todoitems/exceptions/TodoItemExceptionControllerAdvice.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/todoitems/exceptions/TodoItemExceptionControllerAdvice.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/todoitems/exceptions/TodoItemNotFoundException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/todoitems/exceptions/TodoItemNotFoundException.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/todoitems/mapper/CreateTodoItemDtoMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/todoitems/mapper/CreateTodoItemDtoMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/todoitems/mapper/GetTodoItemDtoMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/todoitems/mapper/GetTodoItemDtoMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/todoitems/mapper/UpdateTodoItemDtoMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/todoitems/mapper/UpdateTodoItemDtoMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/users/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/users/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/users/UserController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/users/UserController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/users/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/users/UserRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/users/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/users/UserService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/users/dtos/CreateUserDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/users/dtos/CreateUserDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/users/dtos/GetUserDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/users/dtos/GetUserDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/users/dtos/GetUserDtoId.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/users/dtos/GetUserDtoId.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/users/dtos/UpdateUserDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/users/dtos/UpdateUserDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/users/exceptions/UserExceptionControllerAdvice.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/users/exceptions/UserExceptionControllerAdvice.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/users/exceptions/UserNotFoundException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/users/exceptions/UserNotFoundException.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/users/mappers/CreateUserDtoMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/users/mappers/CreateUserDtoMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/users/mappers/GetUserDtoIdMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/users/mappers/GetUserDtoIdMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/users/mappers/GetUserDtoMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/users/mappers/GetUserDtoMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hszg/todolist/users/mappers/UpdateUserDtoMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/kotlin/com/hszg/todolist/users/mappers/UpdateUserDtoMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/hszg/todolist/DataSourceInitializer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/kotlin/com/hszg/todolist/DataSourceInitializer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/hszg/todolist/todoitems/TodoItemIntegrationTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/kotlin/com/hszg/todolist/todoitems/TodoItemIntegrationTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/hszg/todolist/users/UserIntegrationTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/kotlin/com/hszg/todolist/users/UserIntegrationTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/hszg/todolist/users/UserRepositoryTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/kotlin/com/hszg/todolist/users/UserRepositoryTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/hszg/todolist/users/UserServiceTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/kotlin/com/hszg/todolist/users/UserServiceTest.kt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/backend">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/backend">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="todo-list" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="todo-list" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Interface" />
+        <option value="Kotlin Data Class" />
+        <option value="Kotlin File" />
+        <option value="HTML File" />
+        <option value="Kotlin Class" />
+        <option value="Dockerfile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;XPromus&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/XPromus/we3-hszg.git&quot;,
+    &quot;accountId&quot;: &quot;596fb04f-f66b-4939-845a-41e5dbe11a27&quot;
+  }
+}</component>
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$/backend" gradleHome="$USER_HOME$/.gradle/wrapper/dists/gradle-8.14.3-bin/cv11ve7ro1n3o1j4so8xd9n66/gradle-8.14.3" javaHome="$USER_HOME$/.jdks/temurin-21.0.8" gradleVersion="8.14.3" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="343uCTw40aB5ejX1VlQQoRjcARF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Gradle.Build backend.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build todo-list.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TodoItemIntegrationTest.delete todoItem returns success.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TodoItemIntegrationTest.put todoItems returns success.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TodoListApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.UserIntegrationTest.delete users returns success.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.UserIntegrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.UserIntegrationTest.get users returns success.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.UserIntegrationTest.get users with queries check username.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.UserIntegrationTest.get users with queries return success.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.UserIntegrationTest.post users returns success.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.UserIntegrationTest.put users returns success.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.UserRepositoryTest.WhenFindById_thenReturnUser.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.UserRepositoryTest.whenFindById_thenReturnUser.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.UserServiceTest.testCreateUser.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.UserServiceTest.whenGetUser_thenReturnUser.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.todo-list [assemble].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.TodoListApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/chris/Documents/Teaching/Web Engineering 3/we3-hszg/todo-list/backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="com.hszg.todolist.users" />
+      <recent name="com.hszg.todolist.todoitems" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.TodoListApplication">
+    <configuration name="TodoItemIntegrationTest.delete todoItem returns success" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.hszg.todolist.TodoItemIntegrationTest.delete todoItem returns success&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserIntegrationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.hszg.todolist.users.UserIntegrationTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserIntegrationTest.get users with queries check username" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.hszg.todolist.users.UserIntegrationTest.get users with queries check username&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserIntegrationTest.get users with queries return success" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.hszg.todolist.users.UserIntegrationTest.get users with queries return success&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="todo-list [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="assemble" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TodoListApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="todo-list.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hszg.todolist.TodoListApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.todo-list [assemble]" />
+      <item itemvalue="Gradle.TodoItemIntegrationTest.delete todoItem returns success" />
+      <item itemvalue="Gradle.UserIntegrationTest" />
+      <item itemvalue="Gradle.UserIntegrationTest.get users with queries check username" />
+      <item itemvalue="Gradle.UserIntegrationTest.get users with queries return success" />
+      <item itemvalue="Spring Boot.TodoListApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.todo-list [assemble]" />
+        <item itemvalue="Gradle.UserIntegrationTest" />
+        <item itemvalue="Gradle.UserIntegrationTest.get users with queries check username" />
+        <item itemvalue="Gradle.UserIntegrationTest.get users with queries return success" />
+        <item itemvalue="Gradle.TodoItemIntegrationTest.delete todoItem returns success" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="639cb431-705f-4672-8231-051e0fdb0fac" name="Changes" comment="" />
+      <created>1760454449660</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1760454449660</updated>
+      <workItem from="1760454451112" duration="2773000" />
+      <workItem from="1761197392464" duration="5406000" />
+      <workItem from="1761231517673" duration="3003000" />
+      <workItem from="1761315954334" duration="258000" />
+      <workItem from="1762238374454" duration="8027000" />
+      <workItem from="1762359480143" duration="785000" />
+      <workItem from="1762417360379" duration="98000" />
+      <workItem from="1762417466603" duration="246000" />
+      <workItem from="1762717601588" duration="1317000" />
+      <workItem from="1762861373450" duration="17000" />
+      <workItem from="1762869284907" duration="2434000" />
+      <workItem from="1762876559178" duration="2377000" />
+      <workItem from="1762933310703" duration="3006000" />
+      <workItem from="1763017577682" duration="625000" />
+      <workItem from="1763037102184" duration="620000" />
+      <workItem from="1763124138958" duration="601000" />
+      <workItem from="1763986867502" duration="7819000" />
+      <workItem from="1764053114292" duration="15071000" />
+      <workItem from="1764272089740" duration="2271000" />
+      <workItem from="1764310839142" duration="36000" />
+      <workItem from="1764329798529" duration="4000" />
+      <workItem from="1764679138395" duration="3431000" />
+      <workItem from="1764691901789" duration="321000" />
+      <workItem from="1764747415855" duration="1383000" />
+      <workItem from="1764781984329" duration="363000" />
+      <workItem from="1764782355918" duration="28000" />
+    </task>
+    <task id="LOCAL-00001" summary="Basic todo functionality for seminar.">
+      <option name="closed" value="true" />
+      <created>1760457102674</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1760457102674</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="Basic todo functionality for seminar." />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic todo functionality for seminar." />
+  </component>
+</project>

@@ -3,6 +3,7 @@ package com.hszg.todolist.users
 import com.hszg.todolist.users.dtos.CreateUserDto
 import com.hszg.todolist.users.dtos.GetUserDto
 import com.hszg.todolist.users.dtos.UpdateUserDto
+import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.DeleteMapping
@@ -26,12 +27,8 @@ class UserController(
     private val userService: UserService
 ) {
 
-    @Tag(
-        name = "getUsers",
-        description = "Get a List of users according to provided id and username."
-    )
-    @Tag(
-        name = "GET Methods"
+    @Operation(
+        summary = "Get a list of User DTOs according to provided id and username."
     )
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
@@ -42,9 +39,8 @@ class UserController(
         return userService.getUsers(id, username)
     }
 
-    @Tag(
-        name = "createUser",
-        description = "Create a new user according to the CreateUserDto."
+    @Operation(
+        summary = "Create a new User according to a provided CreateUserDto. A username can only exist once."
     )
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -54,9 +50,8 @@ class UserController(
         return userService.createUser(createUserDto)
     }
 
-    @Tag(
-        name = "updateUser",
-        description = "Update an existing user according to the UpdateUserDto. " +
+    @Operation(
+        summary = "Update an existing user according to the UpdateUserDto. " +
                 "The user is chosen by a provided id in the url. " +
                 "If the user doesn't exist, this operation will fail."
     )
@@ -69,9 +64,8 @@ class UserController(
         return userService.updateUser(id, updateUserDto)
     }
 
-    @Tag(
-        name = "deleteUser",
-        description = "An existing user will be deleted. " +
+    @Operation(
+        summary = "An existing user will be deleted. " +
                 "The user to be deleted is chosen by the provided id. " +
                 "If the user doesn't exist, this operation will fail."
     )
