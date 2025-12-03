@@ -1,4 +1,22 @@
 services:
+  todo_list_backend:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        APP_VERSION: "0.0.1-SNAPSHOT"
+    container_name: todo_list_backend
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://todo_list_db:5432/todo_db
+      - SPRING_DATASOURCE_USERNAME=todo
+      - SPRING_DATASOURCE_PASSWORD=todo
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=create-drop
+    networks:
+      - todo_network
+    ports:
+      - "8080:8080"
   db:
     image: postgres
     container_name: todo_list_db
