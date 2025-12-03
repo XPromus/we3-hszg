@@ -3,6 +3,8 @@ package com.hszg.todolist.todoitems
 import com.hszg.todolist.todoitems.dtos.CreateTodoItemDto
 import com.hszg.todolist.todoitems.dtos.GetTodoItemDto
 import com.hszg.todolist.todoitems.dtos.UpdateTodoItemDto
+import com.hszg.todolist.todoitems.exceptions.TodoItemNotFoundException
+import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.DeleteMapping
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.server.ResponseStatusException
 import java.util.Date
 
 @Tag(
@@ -33,6 +36,9 @@ class TodoItemController (
     )
     @Tag(
         name = "GET Methods"
+    )
+    @Operation(
+        summary = "Get a List of todo items according to provided parameters."
     )
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
@@ -73,7 +79,14 @@ class TodoItemController (
         @PathVariable id: Long,
         @RequestBody updateTodoItemDto: UpdateTodoItemDto
     ): GetTodoItemDto {
-        return todoItemService.updateTodoItem(id, updateTodoItemDto)
+        try {
+            return todoItemService.updateTodoItem(id, updateTodoItemDto)
+        } catch (ex: TodoItemNotFoundException) {
+            throw ResponseStatusException(
+                HttpStatus.NOT_FOUND, ex.message
+            )
+        }
+
     }
 
     @Tag(

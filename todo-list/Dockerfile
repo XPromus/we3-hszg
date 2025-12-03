@@ -4,7 +4,7 @@ ARG APP_VERSION
 
 WORKDIR /build
 
-COPY ../../ ./
+COPY ./ ./
 
 RUN gradle assemble
 
