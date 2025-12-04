@@ -1,18 +1,42 @@
-<script>
+<script lang="ts">
     import DefaultButton from "$lib/components/DefaultButton.svelte";
+    import TodoItem from "$lib/components/TodoItem.svelte";
+    import type { GetTodoItemDto } from "$lib/types/api/TodoItems";
 
+    const items: GetTodoItemDto[] = [
+        {
+            id: 0,
+            name: "Name 1",
+            description: "Description",
+            done: false,
+            created: "",
+            shouldBeDoneBy: "",
+            userId: 0
+        },
+        {
+            id: 1,
+            name: "Name 2",
+            description: "Description",
+            done: false,
+            created: "",
+            shouldBeDoneBy: "",
+            userId: 0
+        },
+        {
+            id: 2,
+            name: "Name 3",
+            description: "Description",
+            done: false,
+            created: "",
+            shouldBeDoneBy: "",
+            userId: 0
+        }
+    ]
 </script>
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
 
-<DefaultButton onclick={() => {console.log("Test")}}>
-    {#snippet content()}
-        Button
-    {/snippet}
-</DefaultButton>
-
-<DefaultButton onclick={() => {console.log("Test")}}>
-    {#snippet content()}
-        <iconify-icon icon="material-symbols:delete-rounded" width="24" height="24"></iconify-icon>
-    {/snippet}
-</DefaultButton>
+<span class="text-5xl font-extralight text-gray-400">TODO LIST</span>
+<div class="flex flex-col space-y-2">
+    {#each items as item }
+        <TodoItem todoItemDto={item}/>
+    {/each}
+</div>
