@@ -2,6 +2,7 @@ package com.hszg.todolist.users
 
 import com.hszg.todolist.users.dtos.CreateUserDto
 import com.hszg.todolist.users.dtos.GetUserDto
+import com.hszg.todolist.users.dtos.GetUserDtoId
 import com.hszg.todolist.users.dtos.UpdateUserDto
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
@@ -28,15 +29,15 @@ class UserController(
 ) {
 
     @Operation(
-        summary = "Get a list of User DTOs according to provided id and username."
+        summary = "Get a list of User DTOs according to provided id and username. The todo items are provided by their id."
     )
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     fun getUsers(
         @RequestParam id: Long?,
         @RequestParam username: String?
-    ): List<GetUserDto> {
-        return userService.getUsers(id, username)
+    ): List<GetUserDtoId> {
+        return userService.getUsersWithTodosAsIds(id, username)
     }
 
     @Operation(
@@ -46,7 +47,7 @@ class UserController(
     @ResponseStatus(HttpStatus.CREATED)
     fun createUser(
         @RequestBody createUserDto: CreateUserDto
-    ): GetUserDto {
+    ): GetUserDtoId {
         return userService.createUser(createUserDto)
     }
 
@@ -60,7 +61,7 @@ class UserController(
     fun updateUser(
         @PathVariable id: Long,
         @RequestBody updateUserDto: UpdateUserDto
-    ): GetUserDto {
+    ): GetUserDtoId {
         return userService.updateUser(id, updateUserDto)
     }
 
