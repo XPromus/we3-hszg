@@ -34,7 +34,6 @@
     ]
 </script>
 
-<span class="text-5xl font-extralight text-gray-400">TODO LIST</span>
 <div class="flex flex-col space-y-2">
     {#each items as item }
         <TodoItem todoItemDto={item}/>
