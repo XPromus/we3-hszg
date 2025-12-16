@@ -2,7 +2,7 @@ export const getRequest = async <ResponseType>(
     url: string, 
     params: Record<string, any> | undefined
 ): Promise<ResponseType> => {
-    const requestURL: string = (params !== undefined) ? (url + "?" + params.toString()) : url;
+    const requestURL: string = params !== undefined ? url + "?" + getRecordAsString(params) : url;
     const response = await fetch(
         requestURL, 
         {
@@ -60,4 +60,16 @@ export const deleteRequest = async (url: string): Promise<boolean> => {
         method: "DELETE",
     });
     return response.ok;
+}
+
+const getRecordAsString = (
+    record: Record<string, any>
+): string => {
+    let returnString: string = "";
+    for (const [key, value] of Object.entries(record)) {
+        if (value !== undefined) {
+            returnString += `${key}=${value}&`
+        }
+    }
+    return returnString
 }

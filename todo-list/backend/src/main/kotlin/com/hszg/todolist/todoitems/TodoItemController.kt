@@ -40,8 +40,8 @@ class TodoItemController (
         @RequestParam(name = "name", required = false) name: String?,
         @RequestParam(name = "description", required = false) description: String?,
         @RequestParam(name = "done", required = false) done: Boolean?,
-        @RequestParam(name = "created", required = false) created: Date?,
-        @RequestParam(name = "shouldBeDoneBy", required = false) shouldBeDoneBy: Date?
+        @RequestParam(name = "created", required = false) created: Long?,
+        @RequestParam(name = "shouldBeDoneBy", required = false) shouldBeDoneBy: Long?
     ): List<GetTodoItemDto> {
         return todoItemService.getTodoItems(
             id, name, description, done, created, shouldBeDoneBy

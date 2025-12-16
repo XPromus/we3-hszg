@@ -51,8 +51,8 @@ class TodoItemIntegrationTest {
             name = "Test Todo Name Updated",
             description = "Test Todo Description Updated",
             done = true,
-            created = Date(),
-            shouldBeDoneBy = Date(),
+            created = 0,
+            shouldBeDoneBy = 0,
             userId = newUserGetDto.id
         )
 
@@ -98,8 +98,8 @@ class TodoItemIntegrationTest {
             name = "Test Todo Name",
             description = "Test Todo Description",
             done = false,
-            created = Date(),
-            shouldBeDoneBy = Date(),
+            created = 0,
+            shouldBeDoneBy = 0,
             userId = userId
         )
 

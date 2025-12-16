@@ -3,8 +3,8 @@ export type GetTodoItemDto = {
     name: string,
     description: string,
     done: boolean,
-    created: string,
-    shouldBeDoneBy: string,
+    created: number,
+    shouldBeDoneBy: number,
     userId: number
 }
 
@@ -12,8 +12,8 @@ export type CreateTodoItemDto = {
     name: string,
     description: string,
     done: boolean,
-    created: string,
-    shouldBeDoneBy: string,
+    created: number,
+    shouldBeDoneBy: number,
     userId: number
 }
 
@@ -21,7 +21,7 @@ export type UpdateTodoItemDto = {
     name: string | undefined,
     description: string | undefined,
     done: boolean | undefined,
-    created: string | undefined,
-    shouldBeDoneBy: string | undefined,
+    created: number | undefined,
+    shouldBeDoneBy: number | undefined,
     userId: number | undefined
 }

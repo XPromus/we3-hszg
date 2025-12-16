@@ -14,8 +14,8 @@ export const getTodoItems = async (
     name: string | undefined,
     description: string | undefined,
     done: boolean | undefined,
-    created: string | undefined,
-    shouldBeDoneBy: string | undefined
+    created: number | undefined,
+    shouldBeDoneBy: number | undefined
 ): Promise<GetTodoItemDto[]> => {
     const params: Record<string, string | boolean | number | undefined> = {
         id: id,

@@ -32,8 +32,8 @@ class TodoItemService (
         name: String?,
         description: String?,
         done: Boolean?,
-        created: Date?,
-        shouldBeDoneBy: Date?
+        created: Long?,
+        shouldBeDoneBy: Long?
     ): List<GetTodoItemDto> {
         val todoItemsToReturn = todoItemRepository.findTodoItemEntityByField(
             id, name, description, done, created, shouldBeDoneBy

@@ -25,9 +25,9 @@ class TodoItem (
     @Column(name = "done", nullable = false)
     val done: Boolean = false,
     @Column(name = "created", nullable = false)
-    val created: Date,
+    val created: Long,
     @Column(name = "shoudBeDoneBy", nullable = false)
-    val shouldBeDoneBy: Date,
+    val shouldBeDoneBy: Long,
     @ManyToOne
     @JsonBackReference
     @JoinColumn(name = "user_id")
