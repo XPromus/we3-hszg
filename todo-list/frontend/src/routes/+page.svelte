@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { getAllTodoItems, postCreateTodoItem } from "$lib/api/TodoItemAPI";
+    import { deleteTodoItem, getAllTodoItems, postCreateTodoItem } from "$lib/api/TodoItemAPI";
     import TodoItem from "$lib/components/TodoItem.svelte";
     import type { GetTodoItemDto } from "$lib/types/api/TodoItems";
     import type { GetUserDtoId } from "$lib/types/api/User";
@@ -14,36 +14,6 @@
     let shouldBeDoneByInput: string = $state("");
     let userId: number = $state(0);
 
-    const items: GetTodoItemDto[] = [
-        {
-            id: 0,
-            name: "Name 1",
-            description: "Description",
-            done: false,
-            created: 0,
-            shouldBeDoneBy: 0,
-            userId: 0
-        },
-        {
-            id: 1,
-            name: "Name 2",
-            description: "Description",
-            done: false,
-            created: 0,
-            shouldBeDoneBy: 0,
-            userId: 0
-        },
-        {
-            id: 2,
-            name: "Name 3",
-            description: "Description",
-            done: false,
-            created: 0,
-            shouldBeDoneBy: 0,
-            userId: 0
-        }
-    ]
-
     const onNewTodoItemCreate = async () => {
         await postCreateTodoItem(
             {
@@ -57,14 +27,22 @@
         )
         todos = await getAllTodoItems();
     }
-    
+
+    const onTodoItemDelete = async (id: number) => {
+        await deleteTodoItem(id);
+        todos = await getAllTodoItems();
+    }
+
+    const onTodoItemUpdate = async () => {
+        todos = await getAllTodoItems();
+    }
 </script>
 
 <div class="flex flex-col space-y-2">
     <div class="flex flex-row space-x-5">
-        <input class="border" type="text" bind:value={todoNameInput} placeholder="Todo Name">
-        <input class="border" type="text" bind:value={descriptionInput} placeholder="Description">
-        <input class="border" bind:value={shouldBeDoneByInput} type="date" name="" id="">
+        <input class="border" type="text" bind:value={todoNameInput} placeholder="Todo Name" id="todoNameInput">
+        <input class="border" type="text" bind:value={descriptionInput} placeholder="Description" id="descriptionInput">
+        <input class="border" bind:value={shouldBeDoneByInput} type="date" id="shouldBeDoneByInput">
         <select class="border px-5" bind:value={userId} placeholder="User">
             {#each users as user, i }
                 <option value={user.id}>{user.username}</option>
@@ -75,6 +53,6 @@
         </button>
     </div>
     {#each todos as todo }
-        <TodoItem todoItemDto={todo}/>
+        <TodoItem todoItemDto={todo} onTodoItemDelete={() => onTodoItemDelete(todo.id)} onTodoItemUpdate={onTodoItemUpdate}/>
     {/each}
 </div>

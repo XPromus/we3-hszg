@@ -70,14 +70,7 @@ class TodoItemController (
         @PathVariable id: Long,
         @RequestBody updateTodoItemDto: UpdateTodoItemDto
     ): GetTodoItemDto {
-        try {
-            return todoItemService.updateTodoItem(id, updateTodoItemDto)
-        } catch (ex: TodoItemNotFoundException) {
-            throw ResponseStatusException(
-                HttpStatus.NOT_FOUND, ex.message
-            )
-        }
-
+        return todoItemService.updateTodoItem(id, updateTodoItemDto)
     }
 
     @Operation(

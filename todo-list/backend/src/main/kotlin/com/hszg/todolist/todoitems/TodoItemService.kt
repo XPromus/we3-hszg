@@ -59,7 +59,7 @@ class TodoItemService (
         updateTodoItemDto: UpdateTodoItemDto
     ): GetTodoItemDto {
         return todoItemRepository.findById(id).map {
-            val targetUser = userService.getUserById(id)
+            val targetUser = userService.getUserById(updateTodoItemDto.userId)
             val save = todoItemRepository.save(
                 fromEditTodoItemDto(
                     it,

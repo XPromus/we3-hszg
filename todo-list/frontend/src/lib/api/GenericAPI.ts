@@ -40,6 +40,7 @@ export const putRequest = async <InputType, ResponseType>(
     url: string,
     input: InputType
 ): Promise<ResponseType> => {
+    console.log(url);
     const response = await fetch(
         url,
         {

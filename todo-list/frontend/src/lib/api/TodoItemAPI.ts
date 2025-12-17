@@ -40,6 +40,7 @@ export const putUpdateTodoItem = async (
     id: number,
     updateTodoItemDto: UpdateTodoItemDto
 ): Promise<GetTodoItemDto> => {
+    console.log(updateTodoItemDto)
     const url = `${apiURL}/${id}`;
     return await putRequest<UpdateTodoItemDto, GetTodoItemDto>(
         url, updateTodoItemDto
