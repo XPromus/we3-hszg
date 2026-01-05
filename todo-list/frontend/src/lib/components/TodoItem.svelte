@@ -53,7 +53,7 @@
     <div class="shrink flex flex-row space-x-5">
         <span class="text-gray-400 font-bold py-1">Done</span>
         <div class="grow flex justify-center">
-            <input bind:checked={doneInput} type="checkbox">
+            <input aria-label="/input/done" bind:checked={doneInput} type="checkbox">
         </div>
     </div>
     <div class="shrink flex justify-center align-middle">
