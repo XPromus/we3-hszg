@@ -43,7 +43,7 @@
         <input class="border" type="text" bind:value={todoNameInput} placeholder="Todo Name" id="todoNameInput">
         <input class="border" type="text" bind:value={descriptionInput} placeholder="Description" id="descriptionInput">
         <input class="border" bind:value={shouldBeDoneByInput} type="date" id="shouldBeDoneByInput">
-        <select class="border px-5" bind:value={userId} placeholder="User">
+        <select class="border px-5" bind:value={userId} placeholder="User" name="user-selection">
             {#each users as user, i }
                 <option value={user.id}>{user.username}</option>
             {/each}
