@@ -44,11 +44,11 @@
 <div class="w-full p-2 flex flex-row space-x-5 outline-1 outline-slate-200 bg-slate-100 drop-shadow-md rounded-md">
     <div class="grow flex flex-row space-x-5">
         <span class="text-gray-400 font-bold py-1">Name</span>
-        <input bind:value={nameInput} class="grow bg-slate-200 px-2 py-1 rounded-md" type="text">
+        <input name="name-input" bind:value={nameInput} class="grow bg-slate-200 px-2 py-1 rounded-md" type="text">
     </div>
     <div class="grow flex flex-row space-x-5">
         <span class="text-gray-400 font-bold py-1">Description</span>
-        <input bind:value={descriptionInput} class="grow bg-slate-200 px-2 py-1 rounded-md" type="text">
+        <input name="description-input" bind:value={descriptionInput} class="grow bg-slate-200 px-2 py-1 rounded-md" type="text">
     </div>
     <div class="shrink flex flex-row space-x-5">
         <span class="text-gray-400 font-bold py-1">Done</span>

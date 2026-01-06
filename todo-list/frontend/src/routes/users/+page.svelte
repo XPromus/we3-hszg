@@ -33,14 +33,16 @@
     {#if users.length == 0}
         <span>No Users exist</span>
     {/if}
-    {#each users as user, i }
-        <div class="w-full p-5 flex flex-row space-x-5">
-            <span>ID: {user.id}</span>
-            <span>Username: {user.username}</span>
-            <span>Number of Todos: {user.todoItems.length}</span>
-            <button name="user-delete-button" class="p-1 bg-red-500 rounded-md text-white font-bold hover:cursor-pointer hover:bg-red-700 transition-all duration-200" onclick={() => onUserDelete(user.id)}>
-                Delete
-            </button>
-        </div>
-    {/each}
+    <ul>
+        {#each users as user, i }
+            <div class="w-full p-5 flex flex-row space-x-5">
+                <span>ID: {user.id}</span>
+                <span>Username: {user.username}</span>
+                <span>Number of Todos: {user.todoItems.length}</span>
+                <button name="user-delete-button" class="p-1 bg-red-500 rounded-md text-white font-bold hover:cursor-pointer hover:bg-red-700 transition-all duration-200" onclick={() => onUserDelete(user.id)}>
+                    Delete
+                </button>
+            </div>
+        {/each}
+    </ul>
 </div>

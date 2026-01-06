@@ -75,17 +75,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="todo-list" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="todo-list" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -129,56 +119,58 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Gradle.Build backend.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build todo-list.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.TodoItemIntegrationTest.delete todoItem returns success.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.TodoItemIntegrationTest.put todoItems returns success.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.TodoListApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.UserIntegrationTest.delete users returns success.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.UserIntegrationTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.UserIntegrationTest.get users returns success.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.UserIntegrationTest.get users with queries check username.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.UserIntegrationTest.get users with queries return success.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.UserIntegrationTest.post users returns success.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.UserIntegrationTest.put users returns success.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.UserRepositoryTest.WhenFindById_thenReturnUser.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.UserRepositoryTest.whenFindById_thenReturnUser.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.UserServiceTest.testCreateUser.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.UserServiceTest.whenGetUser_thenReturnUser.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.todo-list [assemble].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.TodoListApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/chris/Documents/Teaching/Web Engineering 3/we3-hszg/todo-list/backend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Gradle.Build backend.executor": "Run",
+    "Gradle.Build todo-list.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.TodoItemIntegrationTest.delete todoItem returns success.executor": "Run",
+    "Gradle.TodoItemIntegrationTest.put todoItems returns success.executor": "Run",
+    "Gradle.TodoListApplicationTests.contextLoads.executor": "Run",
+    "Gradle.UserIntegrationTest.delete users returns success.executor": "Run",
+    "Gradle.UserIntegrationTest.executor": "Run",
+    "Gradle.UserIntegrationTest.get users returns success.executor": "Run",
+    "Gradle.UserIntegrationTest.get users with queries check username.executor": "Run",
+    "Gradle.UserIntegrationTest.get users with queries return success.executor": "Run",
+    "Gradle.UserIntegrationTest.post users returns success.executor": "Run",
+    "Gradle.UserIntegrationTest.put users returns success.executor": "Run",
+    "Gradle.UserRepositoryTest.WhenFindById_thenReturnUser.executor": "Run",
+    "Gradle.UserRepositoryTest.whenFindById_thenReturnUser.executor": "Run",
+    "Gradle.UserServiceTest.testCreateUser.executor": "Run",
+    "Gradle.UserServiceTest.whenGetUser_thenReturnUser.executor": "Run",
+    "Gradle.todo-list [assemble].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.TodoListApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/chris/Documents/Teaching/Web Engineering 3/we3-hszg/todo-list/frontend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/home/chris/Documents/Teaching/Web Engineering 3/we3-hszg/todo-list/frontend/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
       <recent name="com.hszg.todolist.users" />
@@ -206,8 +198,11 @@
       </ExternalSystemSettings>
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
     <configuration name="UserIntegrationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -230,8 +225,11 @@
       </ExternalSystemSettings>
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
     <configuration name="UserIntegrationTest.get users with queries check username" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -254,8 +252,11 @@
       </ExternalSystemSettings>
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
     <configuration name="UserIntegrationTest.get users with queries return success" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -278,8 +279,11 @@
       </ExternalSystemSettings>
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
     <configuration name="todo-list [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -300,8 +304,11 @@
       </ExternalSystemSettings>
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>false</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
     <configuration name="TodoListApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -332,8 +339,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
-        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7" />
+        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.138" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.29346.138" />
       </set>
     </attachedChunks>
   </component>
@@ -370,6 +377,7 @@
       <workItem from="1764747415855" duration="1383000" />
       <workItem from="1764781984329" duration="363000" />
       <workItem from="1764782355918" duration="28000" />
+      <workItem from="1767703063715" duration="225000" />
     </task>
     <task id="LOCAL-00001" summary="Basic todo functionality for seminar.">
       <option name="closed" value="true" />
