@@ -1,4 +1,13 @@
 services:
+  todo_list_frontend:
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile
+    container_name: todo_list_frontend
+    networks:
+      - todo_network
+    ports:
+      - "3000:3000"
   todo_list_backend:
     build:
       context: ./backend
