@@ -3,6 +3,7 @@ describe('User Creation Spec', () => {
         cy.visit("http://localhost:5173/users");
         cy.get('[name="new-username"]').type("New User");
         cy.get('[type="submit"]').click();
+        cy.contains("New User");
     })
 });
 
