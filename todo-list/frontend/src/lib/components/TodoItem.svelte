@@ -13,7 +13,7 @@
     }: {
         todoItemDto: GetTodoItemDto,
         onTodoItemDelete: OnTodoItemReturnType,
-        onTodoItemUpdate: () => GetTodoItemDto,
+        onTodoItemUpdate: () => Promise<void>,
     } = $props();
 
     let nameInput: string = $derived(todoItemDto.name);
