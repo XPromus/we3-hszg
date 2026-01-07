@@ -7,6 +7,7 @@ import com.hszg.todolist.todoitems.exceptions.TodoItemNotFoundException
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.http.HttpStatus
+import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -24,6 +25,7 @@ import java.util.Date
     name = "todo_item_controller",
     description = "Controller for CRUD operations on the todo items"
 )
+@CrossOrigin
 @RestController
 @RequestMapping("/todos")
 class TodoItemController (

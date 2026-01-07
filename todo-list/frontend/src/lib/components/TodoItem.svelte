@@ -4,14 +4,16 @@
     import type { GetTodoItemDto } from "$lib/types/api/TodoItems";
     import { onMount } from "svelte";
 
+    type OnTodoItemReturnType = () => {};
+
     let {
         todoItemDto,
         onTodoItemDelete,
         onTodoItemUpdate,
     }: {
         todoItemDto: GetTodoItemDto,
-        onTodoItemDelete: any,
-        onTodoItemUpdate: any,
+        onTodoItemDelete: OnTodoItemReturnType,
+        onTodoItemUpdate: () => GetTodoItemDto,
     } = $props();
 
     let nameInput: string = $derived(todoItemDto.name);

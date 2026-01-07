@@ -7,6 +7,7 @@ import com.hszg.todolist.users.dtos.UpdateUserDto
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.http.HttpStatus
+import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController
     name = "user_controller",
     description = "Controller for CRUD operations on the user"
 )
+@CrossOrigin
 @RestController
 @RequestMapping("/users")
 class UserController(
