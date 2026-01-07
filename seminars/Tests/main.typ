@@ -1,6 +1,13 @@
+#import "@preview/codly:1.3.0": *
+#import "@preview/codly-languages:0.1.1": *
+#show: codly-init.with()
+#codly(languages: codly-languages)
+
 = Frontend Tests
 
 == Vitest
+#link("https://vitest.dev/guide/")[https://vitest.dev/guide/]
+
 1. Install the packages
 ```bash
 bun install @types/node jsdom @testing-library/jest-dom @testing-library/svelte @testing-library/user-event @vitest/ui jdom vitest
@@ -43,7 +50,11 @@ import '@testing-library/jest-dom/vitest'
 ```bash
 bun run test:ui
 ```
+
+#pagebreak()
 == Cypress
+#link("https://docs.cypress.io/app/get-started/why-cypress")[https://docs.cypress.io/app/get-started/why-cypress]
+
 1. Install the packages
 ```bash
 bun install cypress
