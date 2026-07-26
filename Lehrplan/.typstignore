@@ -1,0 +1,11 @@
+.github
+.typstignore
+Justfile
+docs/*
+!docs/*.pdf
+main.pdf
+main.typ
+scripts
+tests
+thumbnail.png
+thumbnail.svg

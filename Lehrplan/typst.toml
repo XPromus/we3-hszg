@@ -1,0 +1,15 @@
+[package]
+name = "hszg-beleg-template"
+version = "0.0.1"
+entrypoint = "src/lib.typ"
+authors = ["Christopher-Manuel Hilgner <https://github.com/XPromus>"]
+license = "MIT-0"
+description = "Ein Template für Arbeiten, die an der HSZG geschrieben werden"
+repository = ""
+keywords = ["template", "academic", "document"]
+categories = ["utility"]
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+thumbnail = "thumbnail.png"
