@@ -1,7 +1,6 @@
 package com.hszg.todolist.users.dtos
 
-data class GetUserDtoId(
+data class UserDescriptor(
     val id: Long,
     val username: String,
-    val todoItems: List<Long>
 )

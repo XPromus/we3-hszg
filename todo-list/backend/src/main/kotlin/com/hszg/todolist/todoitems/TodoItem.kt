@@ -1,16 +1,8 @@
 package com.hszg.todolist.todoitems
 
-import com.fasterxml.jackson.annotation.JsonBackReference
 import com.hszg.todolist.users.User
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
-import jakarta.persistence.JoinColumn
-import jakarta.persistence.ManyToOne
-import jakarta.persistence.Table
-import java.util.Date
+import jakarta.persistence.*
+import java.time.LocalDateTime
 
 @Entity(name = "todoitem")
 @Table(name = "todoitem")
@@ -25,11 +17,10 @@ class TodoItem (
     @Column(name = "done", nullable = false)
     val done: Boolean = false,
     @Column(name = "created", nullable = false)
-    val created: Long,
-    @Column(name = "shoudBeDoneBy", nullable = false)
-    val shouldBeDoneBy: Long,
+    val created: LocalDateTime,
+    @Column(name = "shouldBeDoneBy", nullable = false)
+    val shouldBeDoneBy: LocalDateTime,
     @ManyToOne
-    @JsonBackReference
     @JoinColumn(name = "user_id")
     val user: User = User()
 )

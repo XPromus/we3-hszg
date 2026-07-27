@@ -1,81 +1,66 @@
 package com.hszg.todolist.users
 
-import com.hszg.todolist.users.dtos.CreateUserDto
-import com.hszg.todolist.users.dtos.GetUserDto
-import com.hszg.todolist.users.dtos.GetUserDtoId
-import com.hszg.todolist.users.dtos.UpdateUserDto
-import com.hszg.todolist.users.exceptions.UserNotFoundException
-import com.hszg.todolist.users.mappers.fromCreateUserDto
-import com.hszg.todolist.users.mappers.fromUpdateUserDto
+import com.hszg.todolist.users.dtos.*
 import com.hszg.todolist.users.mappers.toGetUserDto
-import com.hszg.todolist.users.mappers.toGetUserDtoId
-import jakarta.transaction.Transactional
+import com.hszg.todolist.users.mappers.toGetUserDtoWithChildrenPage
+import com.hszg.todolist.users.mappers.toNewUser
+import com.hszg.todolist.users.mappers.toUpdatedUser
+import com.hszg.todolist.users.specification.UserSpecification
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
+import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
 @Service
 class UserService(
     private val userRepository: UserRepository
 ) {
-    fun getUserById(id: Long): User {
-        return userRepository.findById(id).orElseThrow {
-            UserNotFoundException(
-                "User with id $id could not be found."
-            )
-        }
+
+    @Transactional(readOnly = true)
+    fun findUsers(
+        filter: UserFilter,
+        pageable: Pageable
+    ): Page<GetUserDto> {
+        val spec = UserSpecification.withFilter(filter)
+        return userRepository.findAll(spec, pageable).map { it.toGetUserDto() }
     }
 
-    fun getUserByUsername(username: String): List<User> {
-        return userRepository.findUserByUsernameIs(username)
+    @Transactional(readOnly = true)
+    fun findUsersWithChildren(
+        filter: UserFilter,
+        pageable: Pageable
+    ): Page<GetUserDtoWithChildren> {
+        val spec = UserSpecification.withFilter(filter)
+        return userRepository.findAll(
+            spec, pageable
+        ).toGetUserDtoWithChildrenPage()
     }
 
-    fun getUsers(
-        id: Long?,
-        username: String?
-    ): List<GetUserDto> {
-        val retrievedUsers = userRepository.findUserByFields(
-            id, username
-        )
-        return retrievedUsers.map { toGetUserDto(it) }
-    }
-
-    fun getUsersWithTodosAsIds(
-        id: Long?,
-        username: String?
-    ): List<GetUserDtoId> {
-        val retrievedUsers = userRepository.findUserByFields(
-            id, username
-        )
-        return retrievedUsers.map { toGetUserDtoId(it) }
-    }
-
-    fun createUser(
-        createUserDto: CreateUserDto
-    ): GetUserDtoId {
-        val checkedUsers = getUserByUsername(createUserDto.username)
-        if (checkedUsers.isNotEmpty()) {
-            throw IllegalStateException("User with username ${createUserDto.username} already exists.")
-        }
-
-        val newUser = fromCreateUserDto(createUserDto)
-        val savedUser = userRepository.save(newUser)
-        return toGetUserDtoId(savedUser)
-    }
-
-    fun updateUser(
+    @Transactional
+    fun putUser(
         id: Long,
-        updateUserDto: UpdateUserDto
-    ): GetUserDtoId {
-        return userRepository.findById(id).map {
-            val updatedUser = fromUpdateUserDto(
-                it, updateUserDto
+        putUserDto: PutUserDto
+    ): Pair<GetUserDto, Boolean> {
+        val existingUser = userRepository.findByIdOrNull(id)
+        val userToSave: User = existingUser?.let {
+            putUserDto.toUpdatedUser(
+                existingUser = it
             )
-            val save = userRepository.save(updatedUser)
-            toGetUserDtoId(save)
-        }.orElseThrow{
-            UserNotFoundException(
-                "Todo item with id $id could not be found."
-            )
+        } ?: run {
+            putUserDto.toNewUser()
         }
+
+        val savedUser = userRepository.save(userToSave)
+        return savedUser.toGetUserDto() to (existingUser == null)
+    }
+
+    @Transactional
+    fun createUser(
+        postUserDto: PostUserDto
+    ): GetUserDto {
+        val newUser = postUserDto.toNewUser()
+        return userRepository.save(newUser).toGetUserDto()
     }
 
     @Transactional

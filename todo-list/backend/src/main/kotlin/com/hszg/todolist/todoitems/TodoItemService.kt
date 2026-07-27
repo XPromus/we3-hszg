@@ -1,83 +1,87 @@
 package com.hszg.todolist.todoitems
 
-import com.hszg.todolist.todoitems.dtos.CreateTodoItemDto
-import com.hszg.todolist.todoitems.dtos.GetTodoItemDto
-import com.hszg.todolist.todoitems.dtos.UpdateTodoItemDto
-import com.hszg.todolist.todoitems.exceptions.TodoItemNotFoundException
-import com.hszg.todolist.todoitems.mapper.fromCreateTodoItemDto
-import com.hszg.todolist.todoitems.mapper.fromEditTodoItemDto
-import com.hszg.todolist.todoitems.mapper.toGetTodoItemDto
-import com.hszg.todolist.users.UserService
+import com.hszg.todolist.todoitems.dtos.*
+import com.hszg.todolist.todoitems.mapper.*
+import com.hszg.todolist.todoitems.specification.TodoItemSpecification
+import com.hszg.todolist.users.UserRepository
+import com.hszg.todolist.users.exceptions.UserNotFoundException
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
+import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
-import java.util.Date
 
 @Service
 class TodoItemService (
-    val todoItemRepository: TodoItemRepository,
-    val userService: UserService
+    private val todoItemRepository: TodoItemRepository,
+    private val userRepository: UserRepository
 ) {
-    fun getTodoItemById(
-        id: Long
-    ): TodoItem {
-        return todoItemRepository.findById(id).orElseThrow {
-            TodoItemNotFoundException(
-                "Todo item with id $id could not be found."
-            )
-        }
+
+    @Transactional(readOnly = true)
+    fun findTodoItems(
+        filter: TodoItemFilter,
+        pageable: Pageable
+    ): Page<GetTodoItemDto> {
+        val spec = TodoItemSpecification.withFilter(filter)
+        return todoItemRepository
+            .findAll(spec, pageable)
+            .toGetTodoItemDtoPage()
     }
 
-    fun getTodoItems(
-        id: Long?,
-        name: String?,
-        description: String?,
-        done: Boolean?,
-        created: Long?,
-        shouldBeDoneBy: Long?
-    ): List<GetTodoItemDto> {
-        val todoItemsToReturn = todoItemRepository.findTodoItemEntityByField(
-            id, name, description, done, created, shouldBeDoneBy
-        )
-        return todoItemsToReturn.map {
-            toGetTodoItemDto(it)
+    @Transactional(readOnly = true)
+    fun findTodoItemsWithChildren(
+        filter: TodoItemFilter,
+        pageable: Pageable
+    ): Page<GetTodoItemDtoWithChildren> {
+        val spec = TodoItemSpecification.withFilter(filter)
+        return todoItemRepository.findAll(
+            spec, pageable
+        ).toGetTodoItemDtoWithChildrenPage()
+    }
+
+    @Transactional
+    fun putTodoItem(
+        id: Long,
+        putTodoItemDto: PutTodoItemDto
+    ): Pair<GetTodoItemDto, Boolean> {
+        val existingTodoItem = todoItemRepository.findByIdOrNull(id)
+        val targetUser = userRepository.findById(putTodoItemDto.userId).orElseThrow {
+            UserNotFoundException("User could not be found")
         }
+        val todoItemToSave: TodoItem = existingTodoItem?.let {
+            putTodoItemDto.toUpdatedTodoItem(
+                existingTodoItem = it,
+                targetUser = targetUser
+            )
+        } ?: run {
+            putTodoItemDto.toNewTodoItem(
+                targetUser = targetUser
+            )
+        }
+
+        val savedTodoItem = todoItemRepository.save(todoItemToSave)
+        return savedTodoItem.toGetTodoItemDto() to (existingTodoItem == null)
     }
 
     @Transactional
     fun createTodoItem(
-        createTodoItemDto: CreateTodoItemDto
+        postTodoItemDto: PostTodoItemDto
     ): GetTodoItemDto {
-        val targetUser = userService.getUserById(createTodoItemDto.userId)
-        val newTodoItem = fromCreateTodoItemDto(createTodoItemDto, targetUser)
-        val savedTodoItem = todoItemRepository.save(newTodoItem)
-        return toGetTodoItemDto(savedTodoItem)
-    }
-
-    @Transactional
-    fun updateTodoItem(
-        id: Long,
-        updateTodoItemDto: UpdateTodoItemDto
-    ): GetTodoItemDto {
-        return todoItemRepository.findById(id).map {
-            val targetUser = userService.getUserById(updateTodoItemDto.userId)
-            val save = todoItemRepository.save(
-                fromEditTodoItemDto(
-                    it,
-                    updateTodoItemDto,
-                    targetUser
-                )
-            )
-            toGetTodoItemDto(save)
-        }.orElseThrow{
-            TodoItemNotFoundException(
-                "Todo item with id $id could not be found."
-            )
+        val targetUser = userRepository.findById(postTodoItemDto.userId).orElseThrow {
+            UserNotFoundException("User could not be found")
         }
+        val newTodoItem = postTodoItemDto.toNewTodoItem(
+            targetUser = targetUser
+        )
+
+        return todoItemRepository.save(newTodoItem).toGetTodoItemDto()
     }
 
     @Transactional
-    fun deleteTodoItem(id: Long) {
-        val toDeleteTodoItem = getTodoItemById(id)
-        todoItemRepository.delete(toDeleteTodoItem)
+    fun deleteTodoItem(
+        id: Long
+    ) {
+        todoItemRepository.deleteById(id)
     }
+
 }

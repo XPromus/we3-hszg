@@ -1,6 +1,6 @@
 package com.hszg.todolist.users
 
-import com.hszg.todolist.users.dtos.CreateUserDto
+import com.hszg.todolist.users.dtos.PostUserDto
 import io.mockk.every
 import io.mockk.mockk
 import kotlin.test.Test
@@ -13,7 +13,7 @@ class UserServiceTest {
 
     @Test
     fun testCreateUser() {
-        val newUserDto = CreateUserDto(
+        val postUserDto = PostUserDto(
             username = "New User"
         )
 
@@ -21,9 +21,9 @@ class UserServiceTest {
             username = "New User"
         )
 
-        val actual = userService.createUser(newUserDto)
+        val actual = userService.createUser(postUserDto)
 
-        assertEquals(newUserDto.username, actual.username)
+        assertEquals(postUserDto.username, actual.username)
     }
 
 }

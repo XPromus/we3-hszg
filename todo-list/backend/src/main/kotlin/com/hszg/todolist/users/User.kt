@@ -17,13 +17,13 @@ class User(
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long? = null,
-    @Column(name = "username")
+    @Column(name = "username", unique = true)
     val username: String = "",
     @OneToMany(
         mappedBy = "user",
         cascade = [CascadeType.REMOVE],
         orphanRemoval = true,
-        fetch = FetchType.EAGER
+        fetch = FetchType.LAZY
     )
-    val todoItems: List<TodoItem> = emptyList()
+    val todoItems: MutableList<TodoItem> = mutableListOf()
 )

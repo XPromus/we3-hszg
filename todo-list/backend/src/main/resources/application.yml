@@ -2,10 +2,10 @@
   port: 8080
 
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/todo_db
-    username: todo
-    password: todo
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/todo_db
+#    username: todo
+#    password: todo
   jpa:
     hibernate:
       ddl-auto: create-drop

@@ -2,22 +2,18 @@ package com.hszg.todolist.todoitems
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
-import com.hszg.todolist.todoitems.dtos.CreateTodoItemDto
 import com.hszg.todolist.todoitems.dtos.GetTodoItemDto
-import com.hszg.todolist.todoitems.dtos.UpdateTodoItemDto
-import com.hszg.todolist.users.dtos.CreateUserDto
+import com.hszg.todolist.todoitems.dtos.PostTodoItemDto
+import com.hszg.todolist.todoitems.dtos.PutTodoItemDto
 import com.hszg.todolist.users.dtos.GetUserDto
+import com.hszg.todolist.users.dtos.PostUserDto
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.http.MediaType
-import org.springframework.test.web.servlet.MockMvc
-import org.springframework.test.web.servlet.delete
-import org.springframework.test.web.servlet.get
-import org.springframework.test.web.servlet.post
-import org.springframework.test.web.servlet.put
+import org.springframework.test.web.servlet.*
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers
-import java.util.Date
+import java.time.LocalDateTime
 import kotlin.test.Test
 
 @SpringBootTest
@@ -47,12 +43,12 @@ class TodoItemIntegrationTest {
         val newUserGetDto: GetUserDto = createNewUser()
         val newTodoItemGetDto: GetTodoItemDto = createNewTodoItem(newUserGetDto.id)
 
-        val updatedTodoItemDto = UpdateTodoItemDto(
+        val updatedTodoItemDto = PutTodoItemDto(
             name = "Test Todo Name Updated",
             description = "Test Todo Description Updated",
             done = true,
-            created = 0,
-            shouldBeDoneBy = 0,
+            created = LocalDateTime.now(),
+            shouldBeDoneBy = LocalDateTime.now(),
             userId = newUserGetDto.id
         )
 
@@ -77,7 +73,7 @@ class TodoItemIntegrationTest {
     }
 
     fun createNewUser(): GetUserDto {
-        val newUser = CreateUserDto(
+        val newUser = PostUserDto(
             username = "New User"
         )
 
@@ -94,12 +90,12 @@ class TodoItemIntegrationTest {
     }
 
     fun createNewTodoItem(userId: Long): GetTodoItemDto {
-        val newTodoItem = CreateTodoItemDto(
+        val newTodoItem = PostTodoItemDto(
             name = "Test Todo Name",
             description = "Test Todo Description",
             done = false,
-            created = 0,
-            shouldBeDoneBy = 0,
+            created = LocalDateTime.now(),
+            shouldBeDoneBy = LocalDateTime.now(),
             userId = userId
         )
 

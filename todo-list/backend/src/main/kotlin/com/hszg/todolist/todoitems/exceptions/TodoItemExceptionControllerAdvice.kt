@@ -18,7 +18,7 @@ class TodoItemExceptionControllerAdvice {
             exception.message
         )
 
-        return ResponseEntity(errorMessage, HttpStatus.BAD_REQUEST)
+        return ResponseEntity(errorMessage, HttpStatus.NOT_FOUND)
     }
 
 }

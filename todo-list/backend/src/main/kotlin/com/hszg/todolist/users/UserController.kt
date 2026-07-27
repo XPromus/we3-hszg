@@ -1,31 +1,30 @@
 package com.hszg.todolist.users
 
-import com.hszg.todolist.users.dtos.CreateUserDto
 import com.hszg.todolist.users.dtos.GetUserDto
-import com.hszg.todolist.users.dtos.GetUserDtoId
-import com.hszg.todolist.users.dtos.UpdateUserDto
+import com.hszg.todolist.users.dtos.GetUserDtoWithChildren
+import com.hszg.todolist.users.dtos.PostUserDto
+import com.hszg.todolist.users.dtos.PutUserDto
+import com.hszg.todolist.users.dtos.UserFilter
+import com.hszg.todolist.users.sort.UserSortField
+import com.hszg.todolist.util.SortDirection
+import com.hszg.todolist.util.toSpringSortDir
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
+import jakarta.validation.Valid
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.PageRequest
+import org.springframework.data.domain.Sort
 import org.springframework.http.HttpStatus
-import org.springframework.web.bind.annotation.CrossOrigin
-import org.springframework.web.bind.annotation.DeleteMapping
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.PutMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestParam
-import org.springframework.web.bind.annotation.ResponseStatus
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.*
+import java.net.URI
 
 @Tag(
     name = "user_controller",
     description = "Controller for CRUD operations on the user"
 )
-@CrossOrigin
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/v1/users")
 class UserController(
     private val userService: UserService
 ) {
@@ -36,10 +35,55 @@ class UserController(
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     fun getUsers(
-        @RequestParam id: Long?,
-        @RequestParam username: String?
-    ): List<GetUserDtoId> {
-        return userService.getUsersWithTodosAsIds(id, username)
+        @Valid @ModelAttribute filter: UserFilter,
+        @RequestParam(defaultValue = "0") page: Int,
+        @RequestParam(defaultValue = "20") size: Int,
+        @RequestParam(name = "sortBy", defaultValue = "USERNAME") sortBy: UserSortField,
+        @RequestParam(name = "sortDir", defaultValue = "ASCENDING") sortDirection: SortDirection
+    ): ResponseEntity<Page<GetUserDto>> {
+
+        val sort = Sort.by(sortDirection.toSpringSortDir(), sortBy.propertyName)
+        val boundedSize = size.coerceIn(0, 100)
+        val pageable = PageRequest.of(page, boundedSize, sort)
+
+        val users = userService.findUsers(
+            filter,
+            pageable
+        )
+        return ResponseEntity.ok(users)
+    }
+
+    @Operation(
+        summary = "Get a list of GetUserDtos with the children being provided as descriptor DTOs."
+    )
+    @GetMapping("/full")
+    @ResponseStatus(HttpStatus.OK)
+    fun getUsersWithChildren(
+        @Valid @ModelAttribute filter: UserFilter,
+        @RequestParam(defaultValue = "0") page: Int,
+        @RequestParam(defaultValue = "20") size: Int,
+        @RequestParam(name = "sortBy", defaultValue = "USERNAME") sortBy: UserSortField,
+        @RequestParam(name = "sortDir", defaultValue = "ASCENDING") sortDirection: SortDirection
+    ): ResponseEntity<Page<GetUserDtoWithChildren>> {
+        val sort = Sort.by(sortDirection.toSpringSortDir(), sortBy.propertyName)
+        val boundedSize = size.coerceIn(0, 100)
+        val pageable = PageRequest.of(page, boundedSize, sort)
+
+        val users = userService.findUsersWithChildren(filter, pageable)
+        return ResponseEntity.ok(users)
+    }
+
+    @Operation(
+        summary = "Update an existing user according to the PutUserDto. If the user doesn't exist, a new user gets created."
+    )
+    @PutMapping("/{id}")
+    fun putUser(
+        @PathVariable id: Long,
+        @Valid @RequestBody putUserDto: PutUserDto
+    ): ResponseEntity<GetUserDto> {
+        val (body, wasCreated) = userService.putUser(id, putUserDto)
+        val status = if (wasCreated) HttpStatus.CREATED else HttpStatus.OK
+        return ResponseEntity(body, status)
     }
 
     @Operation(
@@ -48,29 +92,15 @@ class UserController(
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     fun createUser(
-        @RequestBody createUserDto: CreateUserDto
-    ): GetUserDtoId {
-        return userService.createUser(createUserDto)
+        @Valid @RequestBody postUserDto: PostUserDto
+    ): ResponseEntity<GetUserDto> {
+        val savedUser = userService.createUser(postUserDto)
+        val location = URI.create("/users/${savedUser.id}")
+        return ResponseEntity.created(location).body(savedUser)
     }
 
     @Operation(
-        summary = "Update an existing user according to the UpdateUserDto. " +
-                "The user is chosen by a provided id in the url. " +
-                "If the user doesn't exist, this operation will fail."
-    )
-    @PutMapping("/{id}")
-    @ResponseStatus(HttpStatus.OK)
-    fun updateUser(
-        @PathVariable id: Long,
-        @RequestBody updateUserDto: UpdateUserDto
-    ): GetUserDtoId {
-        return userService.updateUser(id, updateUserDto)
-    }
-
-    @Operation(
-        summary = "An existing user will be deleted. " +
-                "The user to be deleted is chosen by the provided id. " +
-                "If the user doesn't exist, this operation will fail."
+        summary = "Deletes a user by an id. Returns 204 no matter if the user exists or not."
     )
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)

@@ -3,18 +3,14 @@ package com.hszg.todolist.users
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.jsonMapper
 import com.fasterxml.jackson.module.kotlin.readValue
-import com.hszg.todolist.users.dtos.CreateUserDto
 import com.hszg.todolist.users.dtos.GetUserDto
-import com.hszg.todolist.users.dtos.UpdateUserDto
+import com.hszg.todolist.users.dtos.PostUserDto
+import com.hszg.todolist.users.dtos.PutUserDto
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.http.MediaType
-import org.springframework.test.web.servlet.MockMvc
-import org.springframework.test.web.servlet.delete
-import org.springframework.test.web.servlet.get
-import org.springframework.test.web.servlet.post
-import org.springframework.test.web.servlet.put
+import org.springframework.test.web.servlet.*
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers
 import kotlin.test.Test
 import kotlin.test.assertTrue
@@ -110,7 +106,7 @@ class UserIntegrationTest {
     @Test
     fun `put users returns success and get request for updated user has correct new username`() {
         val newUserGetDto = createNewUser()
-        val newUserUpdateDto = UpdateUserDto(
+        val newUserUpdateDto = PutUserDto(
             username = "New User Updated"
         )
 
@@ -183,7 +179,7 @@ class UserIntegrationTest {
     }
 
     fun createNewUser(): GetUserDto {
-        val newUser = CreateUserDto(
+        val newUser = PostUserDto(
             username = "New User"
         )
 
