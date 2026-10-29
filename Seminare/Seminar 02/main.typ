@@ -35,10 +35,10 @@
   ```
 
   *Teilaufgaben*
-  1. Implementiere alle vier Entities mit den passenden Annotationen (`@JoinColumn`, `mappedBy`, `@JoinTable`).
-  2. Warum muss `id: Long? = null` nullable sein?
-  3. Ergänze `cascade` und `orphanRemoval` bei `TodoList` $arrow$ `TodoItem`
-  4. Ergänze Datenfelder mit `@Column`, z.B. für `TodoItem`: `title` (max. 100 Zeichen, nicht null), `done: Boolean`, `dueDate?`
+  #set enum(numbering: "1.")
+  + Implementiere alle vier Entities mit den passenden Annotationen (`@JoinColumn`, `mappedBy`, `@JoinTable`).
+  + Ergänze `cascade` und `orphanRemoval` bei `TodoList` $arrow$ `TodoItem`
+  + Ergänze Datenfelder mit `@Column`, z.B. für `TodoItem`: `title` (max. 100 Zeichen, nicht null), `done: Boolean`, `dueDate?`
 ]
 
 #task(name: "Repository & Query-Erstellung")[
