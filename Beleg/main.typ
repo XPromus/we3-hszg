@@ -1,16 +1,27 @@
-= Prüfungsanforderungen
+= Beleganforderungen
 
-- Mindestens 2 Entities, die in Relation zueinander stehen (ManyToOne, ManyToMany)
-- Mindestens ein Controller sollte Integration Tests enthalten
+- Gruppenarbeit erlaubt 
+- Wer was geschrieben hat soll im Beleg gekennzeichnet werden (z.B. in Kapitelnamen)
+
+== Inhalt
+- Anforderungsanalyse
+- Dokumentation des Projekts
+- Implementationsentscheidungen erklären
+- Ausblick
+
+== Projektanforderungen
+
 - Entities, Repositories, Services, Controller (falls Spring)
+- Mindestens 2 Entities, die in Relation zueinander stehen (ManyToOne, ManyToMany)
+- Unit und Integration Tests für mindestens eine Domain
 - CRUD Operationen sollten für alle Entities möglich sein
 - Weitere Funktionen wären nett
 - Einfaches Frontend welches alle REST API Endpunkte abdeckt
 - Es sollte intuitiv benutzbar sein
 - Daten vom Backend sollten persistent in einer Datenbank gespeichert werden
-- Datenbank sollte in einem Container laufen
-- Backend sollte mit einem Build Container gebaut werden und in einem Container laufen
-- Frontend sollte in einem Container laufen
+- Datenbank soll in einem Container laufen
+- Backend soll mit einem Build Container gebaut werden und in einem Container laufen
+- Frontend soll mit einem Build Container gebaut werden und in einem Container laufen
 
 = Beispielprojekte
 1. *Wetterhistorie*
